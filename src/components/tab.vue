@@ -32,7 +32,7 @@
     background-color: #EAEAEA;
     padding: 0.15rem 0 0.1rem 0;
     width: 100%;
-    position: fixed;
+    position: fixed !important;
     bottom: 0;
     left: 0;
     z-index: 999;
