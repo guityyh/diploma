@@ -21,26 +21,15 @@
           <inline-calendar
             ref="calendar"
             @on-select-single-date="onChange"
-            @on-view-change="onViewChange"
             class="inline-calendar-demo"
             :show.sync="show"
             v-model="value"
-            start-date="2016-04-01"
+            :start-date="nowtime"
             end-date="2018-05-30"
-            :range="range"
             :show-last-month="showLastMonth"
-            :show-next-month="showNextMonth"
             :highlight-weekend="highlightWeekend"
-            :return-six-rows="return6Rows"
-            :hide-header="hideHeader"
-            :hide-week-list="hideWeekList"
-            :replace-text-list="replaceTextList"
-            :weeks-list="weeksList"
-            :render-function="buildSlotFn"
-            :disable-past="true"
-            :disable-future="disableFuture"
-            :disable-weekend="disableWeekend"
-            :disable-date-function="disableDateFunction">
+            :disable-past='true'
+            :disable-weekend="disableWeekend">
           </inline-calendar>
         </div>
 
@@ -63,27 +52,30 @@
       </div>
     </div>
 
-    <div class="dialog" v-if="dialogShow">
-      <div v-transfer-dom>
-        <x-dialog :show.sync="show2" class="dialog-demo">
-          <div class="title">预约信息</div>
+    <div v-transfer-dom>
+      <x-dialog :show.sync="show2" :hide-on-blur="true" class="dialog-demo">
+        <div class="title">预约信息</div>
+        <div class="dialog-content">
           <div class="office">就诊科室：<span>儿科</span></div>
           <div class="name">医生姓名：<span>安德拉</span></div>
           <group>
-            <cell :title="就诊日期" :value="value"></cell>
+            <cell :title="clinicTime" :value="value"></cell>
           </group>
           <div class="place">就诊地点：<span>门诊大楼二楼D区17诊室</span></div>
           <group>
-            <x-input title="就诊人：" placeholder="请输入就诊人姓名" novalidate :icon-type="iconType" :show-clear="false" @on-blur="onBlur" placeholder-align="left"></x-input>
-            <x-input title="联系电话：" placeholder="请输入就诊人联系电话" novalidate :icon-type="iconType" :show-clear="false" placeholder-align="left"></x-input>
-            <x-input title="身份证号码：" placeholder="请输入就诊人身份证号码" novalidate :icon-type="iconType" :show-clear="false" placeholder-align="left"></x-input>
+            <x-input title=" 就诊人：" label-width="5em" placeholder="请输入就诊人姓名" novalidate :show-clear="false" @on-blur="onBlur" placeholder-align="left"></x-input>
+            <x-input title="联系电话：" label-width="5em" placeholder="请输入就诊人联系电话" novalidate :show-clear="false" placeholder-align="left"></x-input>
+            <x-input title="身份证号：" label-width="5em" placeholder="请输入就诊人身份证号码" novalidate :show-clear="false" placeholder-align="left"></x-input>
           </group>
-          <div @click="show2=false">
-            <span class="vux-close"></span>
+          <div class="price">挂号费用：<span class="red">13</span> 元</div>
+          <div class="button">
+            <div class="cancel">取消</div>
+            <a href="##" class="submit">提交</a>
           </div>
-        </x-dialog>
-      </div>
+        </div>
+      </x-dialog>
     </div>
+
   </div>
 </template>
 
@@ -106,10 +98,26 @@
     data () {
       return{
         selected: 1,
+        nowtime: '',
         value: '',
+        show: true,
+        showLastMonth: false,
+        highlightWeekend: true,
+        disableWeekend: false,
         show2: false,
-        dialogShow: false
+        dialogShow: false,
+        clinicTime: '就诊日期：'
       }
+    },
+    created () {
+      let now = new Date();
+      let year = now.getFullYear(); //得到年份
+      let month = now.getMonth()+1;//得到月份
+      let date = now.getDate();//得到日期
+      if (month < 10) month = "0" + month;
+      if (date < 10) date = "0" + date;
+      this.nowtime = `${year}-${month}-${date}`
+      console.log(this.nowtime)
     },
     methods: {
       onItemClick (type) {
@@ -119,14 +127,16 @@
         console.log('on blur', val)
       },
       onChange () {
-        this.dialogShow = true
+//        this.dialogShow = true
+        this.show2 = true
       }
     }
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .docdetail{
+  height: 100vh;
   display: flex;
   flex-direction: column;
   font-size: 0.28rem;
@@ -196,7 +206,72 @@
 
   }
 }
-  .dialog{
-    height: 100%;
+
+  .dialog-demo{
+    font-size: 0.28rem;
+    .weui-dialog{
+      border-radius: 0.3rem;
+    }
+    .title{
+      font-size: 0.32rem;
+      color: #169BD5;
+      line-height: 0.64rem;
+      border-bottom: 1px solid #f2f2f2;
+    }
+    .dialog-content{
+      margin-top: 0.14rem;
+      padding-left: 0.3rem;
+      text-align: left;
+      line-height: 0.56rem;
+      padding-bottom: 0.6rem;
+      .weui-cells:before{
+        border: none;
+      }
+      .vux-x-input:before{
+        border: none;
+      }
+      .weui-cells:after{
+        border: none;
+      }
+      .weui-cells{
+        margin-top: 0;
+      }
+      .weui-cell{
+        padding: 0;
+        font-size: 0.28rem;
+        margin: 0.14rem 0;
+      }
+      .vux-cell-primary{
+        flex: none;
+      }
+      .weui-cell__ft{
+
+      }
+      .red{
+        color: #f00;
+      }
+      .button{
+        margin-top: 0.5rem;
+        text-align: center;
+        line-height: 0.52rem;
+        .cancel{
+          display: inline-block;
+          border: 1px solid #169BD5;
+          padding: 0 0.4rem;
+          border-radius: 0.1rem;
+        }
+        .submit{
+          color: #fff;
+          display: inline-block;
+          background-color: #169BD5;
+          padding: 0 0.4rem;
+          border-radius: 0.1rem;
+          margin-left: 0.3rem;
+        }
+      }
+    }
+
   }
+
+
 </style>
