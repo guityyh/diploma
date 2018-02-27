@@ -6,10 +6,10 @@
         <p class="text">头部</p>
       </div>
     </div>
-    <div class="right-list">
+    <router-link tag="div" to="/details" class="right-list">
       <div class="item" v-for="i in 20">打喷嚏</div>
       <div class="item">喘不过来气</div>
-    </div>
+    </router-link>
   </div>
 </template>
 

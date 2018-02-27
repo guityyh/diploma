@@ -69,8 +69,8 @@
           </group>
           <div class="price">挂号费用：<span class="red">13</span> 元</div>
           <div class="button">
-            <div class="cancel">取消</div>
-            <a href="##" class="submit">提交</a>
+            <div class="cancel" @click="closeDialog">取消</div>
+            <router-link tag="div" to="/bookdetails" href="##" class="submit">提交</router-link>
           </div>
         </div>
       </x-dialog>
@@ -129,6 +129,9 @@
       onChange () {
 //        this.dialogShow = true
         this.show2 = true
+      },
+      closeDialog () {
+        this.show2 = false
       }
     }
   }

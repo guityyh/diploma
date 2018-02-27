@@ -29,22 +29,35 @@
 <style lang="scss" scoped>
   .footer{
     font-size: 0;
-    background-color: #EAEAEA;
+    background-color: #fbf9fe;
     padding: 0.15rem 0 0.1rem 0;
     width: 100%;
     position: fixed !important;
     bottom: 0;
     left: 0;
     z-index: 999;
+    .router-link-exact-active{
+      color: #169BD5;
+    }
     .tab{
       padding: 0 0.2rem;
       display: flex;
       justify-content: space-around;
+      align-items: center;
       text-align: center;
       .tab-item{
         flex: 1;
         text-align: center;
-        .iconfont{
+        .icon-edittext7bianjiwenben{
+          font-size: 0.36rem;
+        }
+        .icon-haofangtuo400iconfont2yiyuan{
+          font-size: 0.4rem;
+        }
+        .icon-dianshi{
+          font-size: 0.4rem;
+        }
+        .icon-gerenzhongxin{
           font-size: 0.4rem;
         }
         .tab-link{

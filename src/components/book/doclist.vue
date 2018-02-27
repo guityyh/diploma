@@ -1,6 +1,6 @@
 <template>
   <div class="docList">
-    <div class="single">
+    <div class="single" v-for="i in 10">
       <div class="portrait"><img src="./../../assets/images/docportrait.png" alt=""></div>
       <div class="title">
         <div class="call">
@@ -13,49 +13,12 @@
         </div>
         <div class="skilled">擅长：小儿推拿、整脊、疝气</div>
       </div>
-      <div class="book">
+      <div class="apply">
         <div class="judge">有号</div>
-        <a href="##" class="button">预约</a>
+        <router-link tag="div" to="/docdetail" class="button">预约</router-link>
       </div>
     </div>
 
-    <div class="single">
-      <div class="portrait"><img src="./../../assets/images/docportrait.png" alt=""></div>
-      <div class="title">
-        <div class="call">
-          <div class="name">安德拉</div>
-          <div class="honor">一级专家</div>
-        </div>
-        <div class="where">
-          <div class="office">儿科</div>
-          <div class="float">二楼</div>
-        </div>
-        <div class="skilled">擅长：小儿推拿、整脊、疝气</div>
-      </div>
-      <div class="book">
-        <div class="judge">有号</div>
-        <a href="##" class="button">预约</a>
-      </div>
-    </div>
-
-    <div class="single">
-      <div class="portrait"><img src="./../../assets/images/docportrait.png" alt=""></div>
-      <div class="title">
-        <div class="call">
-          <div class="name">安德拉</div>
-          <div class="honor">一级专家</div>
-        </div>
-        <div class="where">
-          <div class="office">儿科</div>
-          <div class="float">二楼</div>
-        </div>
-        <div class="skilled">擅长：小儿推拿、整脊、疝气</div>
-      </div>
-      <div class="book">
-        <div class="judge">有号</div>
-        <a href="##" class="button">预约</a>
-      </div>
-    </div>
 
   </div>
 </template>
@@ -68,6 +31,7 @@
 
 <style lang="scss" scoped>
 .docList{
+  padding-bottom: 1rem;
   .single{
     background-color: #fff;
     padding: 0.2rem 0.4rem;
@@ -106,6 +70,7 @@
       }
       .where{
         margin: 0.15rem 0;
+        font-size: 0.26rem;
         .office{
           display: inline-block;
           border: 1px solid #181A19;
@@ -121,15 +86,18 @@
         }
       }
       .skilled{
-
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
-    .book{
+    .apply{
       text-align: center;
       .judge{
         line-height: 0.48rem;
       }
       .button{
+        display: block;
         color: #fff;
         line-height: 0.52rem;
         padding: 0 0.3rem;
