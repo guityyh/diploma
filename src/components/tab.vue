@@ -1,21 +1,13 @@
 <template>
   <div class="footer">
     <div class="tab">
-      <router-link tag="div" class="tab-item" to="/">
-        <i class="iconfont icon-edittext7bianjiwenben"></i>
-        <span class="tab-link">自查</span>
-      </router-link>
-      <router-link tag="div" class="tab-item" to="/book">
-        <i class="iconfont icon-haofangtuo400iconfont2yiyuan"></i>
-        <span class="tab-link">预约</span>
-      </router-link>
-      <router-link tag="div" class="tab-item" to="/news">
-        <i class="iconfont icon-dianshi"></i>
-        <span class="tab-link">资讯</span>
+      <router-link tag="div" class="tab-item server" to="/">
+        <i class="iconfont icon-yiliao1"></i>
+        <span class="tab-link">诊疗服务</span>
       </router-link>
       <router-link tag="div" class="tab-item" to="/mine">
-        <i class="iconfont icon-gerenzhongxin"></i>
-        <span class="tab-link">我的</span>
+        <i class="iconfont icon-1gerenzhongxin20x20"></i>
+        <span class="tab-link">个人中心</span>
       </router-link>
     </div>
 
@@ -29,8 +21,7 @@
 <style lang="scss" scoped>
   .footer{
     font-size: 0;
-    background-color: #fbf9fe;
-    padding: 0.15rem 0 0.1rem 0;
+    background-color: #fff;
     width: 100%;
     position: fixed !important;
     bottom: 0;
@@ -40,7 +31,7 @@
       color: #169BD5;
     }
     .tab{
-      padding: 0 0.2rem;
+      border-top: 2px solid #f2f2f2;
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -48,22 +39,13 @@
       .tab-item{
         flex: 1;
         text-align: center;
-        .icon-edittext7bianjiwenben{
-          font-size: 0.36rem;
-        }
-        .icon-haofangtuo400iconfont2yiyuan{
-          font-size: 0.4rem;
-        }
-        .icon-dianshi{
-          font-size: 0.4rem;
-        }
-        .icon-gerenzhongxin{
-          font-size: 0.4rem;
+        line-height: 0.8rem;
+        &.server{
+          border-right: 2px solid #f2f2f2;
         }
         .tab-link{
           font-size: 0.32rem;
-          display: block;
-          margin-top: 0.05rem;
+          margin-left: 0.1rem;
         }
       }
     }

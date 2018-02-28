@@ -19,6 +19,6 @@ export default {
 @import './../src/assets/css/resets.scss';
 
 body {
-  background-color: #fbf9fe;
+  background-color: #F0F0F0;
 }
 </style>

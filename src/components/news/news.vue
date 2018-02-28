@@ -1,5 +1,5 @@
 <template>
-  <div class="article">
+  <div class="news">
     <div class="header">
       <search
         :results="results"
@@ -18,6 +18,7 @@
       <div class="headline-img"><img src="./../../assets/images/docportrait.png" alt=""></div>
       <div class="headline-title"><p>我是标题，早上起来多喝水!</p></div>
     </div>
+
     <router-link tag="div" to="/article" class="article-single" v-for="i in 10">
       <div class="article-img"><img src="./../../assets/images/docportrait.png" alt=""></div>
       <div class="definite">
@@ -28,6 +29,8 @@
         </div>
       </div>
     </router-link>
+
+
   </div>
 </template>
 
@@ -63,7 +66,7 @@
 </script>
 
 <style lang="scss" >
-  .article{
+  .news{
     font-size: 0;
     padding-bottom: 1rem;
     .header{
@@ -110,6 +113,7 @@
     }
     .headline{
       position: relative;
+      margin-bottom: 0.2rem;
       .headline-img{
         height: 3.4rem;
         width: 100%;
@@ -134,6 +138,7 @@
       }
     }
     .article-single{
+      background-color: #fff;
       padding: 0.3rem 0.4rem;
       border-bottom: 1px solid #ccc;
       display: flex;

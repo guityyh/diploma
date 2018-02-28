@@ -119,8 +119,8 @@
         }
       }
       .neck{
-        width: 1.14rem;
-        height: 0.4rem;
+        width: 1.16rem;
+        height: 0.42rem;
         left: 50%;
         top: 1.91rem;
         transform: translateX(-50%);

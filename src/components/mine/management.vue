@@ -11,7 +11,7 @@
     </group>
 
     <div class="button">
-      <router-link tag="div" to="/recordlist" href="##" class="submit">保存</router-link>
+      <router-link tag="div" to="/managelist" href="##" class="submit">保存</router-link>
     </div>
 
   </div>

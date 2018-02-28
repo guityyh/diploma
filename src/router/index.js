@@ -7,7 +7,20 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: '/check',
+      meta: {
+        name: 'home',
+        title: 'XX医院'
+      },
+      component: function (resolve) {
+        require(['./../components/index.vue'], resolve)
+      }
+    },
+    {
+      path: '/check',
+      meta: {
+        name: 'check',
+        title: '疾病自查'
+      },
       component: function (resolve) {
         require(['./../components/check/check.vue'], resolve)
       },
@@ -133,13 +146,13 @@ export default new Router({
       }
     },
     {
-      path: '/recordlist',
+      path: '/managelist',
       meta: {
         name: 'recordlist',
         title: '档案管理'
       },
       component: function (resolve) {
-        require(['./../components/mine/record-list.vue'], resolve)
+        require(['../components/mine/manage-list.vue'], resolve)
       }
     }
   ]

@@ -11,7 +11,7 @@
           <div class="office">儿科</div>
           <div class="float">二楼</div>
         </div>
-        <div class="skilled">擅长：小儿推拿、整脊、疝气</div>
+        <div class="skilled">擅长：小儿推拿、整脊、疝气小儿推拿</div>
       </div>
       <div class="apply">
         <div class="judge">有号</div>
@@ -44,8 +44,8 @@
     justify-content: space-between;
     align-items: center;
     .portrait {
-      width: 1rem;
-      height: 1rem;
+      width: 1.2rem;
+      height: 1.2rem;
       border-radius: 50%;
       img {
         width: 100%;
@@ -54,14 +54,16 @@
       }
     }
     .title{
-      margin-left: 0.5rem;
+      margin: 0 0.25rem;
+      overflow: hidden;
       flex: 1;
       .call {
         .name {
-          font-size: 0.32rem;
+          font-size: 0.36rem;
           display: inline-block;
         }
         .honor {
+          margin-left: 0.1rem;
           display: inline-block;
           background-color: #B9EDF8;
           border-radius: 0.1rem;
@@ -69,7 +71,7 @@
         }
       }
       .where{
-        margin: 0.15rem 0;
+        margin: 0.2rem 0;
         font-size: 0.26rem;
         .office{
           display: inline-block;
@@ -86,9 +88,11 @@
         }
       }
       .skilled{
+        height: 0.3rem;
         overflow: hidden;
-        text-overflow: ellipsis;
         white-space: nowrap;
+        text-overflow: ellipsis;
+
       }
     }
     .apply{

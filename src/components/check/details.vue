@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="progress-content">
-    <div class="section-title">你可能的患病结果</div>
+    <div class="section-title">你是否还伴随以下症状？</div>
     <div class="item" v-for="item in progressJson" :key='item.title'>
       <div class="title">{{item.title}}</div>
       <x-progress :percent="item.percent" :show-cancel="false"></x-progress>
