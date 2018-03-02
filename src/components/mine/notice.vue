@@ -22,6 +22,8 @@
   height: 100vh;
   background-color: #fff;
   padding:0.4rem;
+  position: absolute;
+  z-index: 250;
   .notice-refer{
     margin-top: 0.3rem;
     &:first-child{
@@ -29,7 +31,10 @@
     }
     .title{
       font-size: 0.32rem;
-      background-color: #169BD5;
+      line-height: 0.48rem;
+      background-color: #2ac8f5;
+      border-radius: 0.1rem;
+      padding-left: 0.1rem;
     }
     .paragraph{
       display: block;
@@ -41,6 +46,7 @@
     }
   }
   .iconfont{
+    vertical-align: middle;
     font-size: 0.4rem;
     margin-right: 0.1rem;
   }

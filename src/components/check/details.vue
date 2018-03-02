@@ -73,6 +73,7 @@ export default {
 
 <style lang="scss" scoped>
 .details{
+  background-color: #fff;
   padding-bottom: 1rem;
   .section-title{
     font-size: 0.32rem;

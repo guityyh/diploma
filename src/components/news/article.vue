@@ -6,7 +6,7 @@
         <div class="title">我是标题我是标题</div>
         <div class="else">
           <div class="time">2018-1-28</div>
-          <div class="read">阅读量：<span>123</span></div>
+          <div class="read"><i class="iconfont icon-yanjing"></i><span>123</span></div>
         </div>
       </div>
       <router-link tag="div" to="/article" class="header-ask">咨询</router-link>
@@ -23,15 +23,15 @@
 
     <div class="read-more">
       <div class="guess">猜你还想读 >>></div>
-      <div class="article-single" v-for="i in 2">
-        <div class="article-img"><img src="./../../assets/images/docportrait.png" alt=""></div>
-        <div class="definite">
-          <div class="title">我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题我是标题</div>
+      <router-link tag="div" to="/article" class="article-item" v-for="i in 2">
+        <div class="particulars">
+          <div class="title">给宝宝剃胎毛，以后头发就能变浓密？不存在的！</div>
           <div class="else">
-            <div class="time">2018-1-23</div>
+            <div class="time">2018.1.23</div>
           </div>
         </div>
-      </div>
+        <div class="article-img"><img src="./../../assets/images/article-1.jpeg" alt=""></div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -62,6 +62,7 @@
       line-height: 0.52rem;
       .title{
         font-size: 0.32rem;
+        font-weight: 700;
       }
       .else{
         display: flex;
@@ -73,7 +74,7 @@
       .header-ask{
         color: #fff;
         padding: 0 0.2rem;
-        background-color: #169BD5;
+        background-color: #2ac8f5;
         border-radius: 0.1rem;
       }
     }
@@ -90,30 +91,35 @@
       .guess{
         padding-bottom: 0.2rem;
         border-bottom: 1px solid #999;
+        font-weight: 700;
       }
-      .article-single {
+      .article-item {
+        background-color: #fff;
         padding: 0.3rem 0;
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #e5e5e5;
         display: flex;
-        &:last-child {
-          border-bottom: none;
+        &:nth-of-type(2){
+          margin-top: 0.3rem;
         }
         .article-img {
-          height: 1.3rem;
-          width: 1.8rem;
+          height: 1.6rem;
+          width: 2.2rem;
+          border-radius: 0.1rem;
           img {
             height: 100%;
             width: 100%;
+            border-radius: 0.1rem;
           }
         }
-        .definite {
+        .particulars {
           flex: 1;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
-          margin-left: 0.1rem;
+          margin-right: 0.3rem;
           .title {
             font-size: 0.28rem;
+            font-weight: 700;
             line-height: 0.52rem;
             margin-top: -0.12rem;
             display: -webkit-box;
@@ -122,8 +128,11 @@
             overflow: hidden;
           }
           .else {
+            display: flex;
             font-size: 0.28rem;
-            color: #999;
+            .time{
+              width: 8em;
+            }
           }
         }
       }

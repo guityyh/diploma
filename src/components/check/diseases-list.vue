@@ -23,6 +23,7 @@ export default {
 .container{
   display: flex;
   align-items: flex-start;
+  background-color: #fff;
   .left-list{
     width: 30%;
     height: 100vh;

@@ -24,7 +24,6 @@
   width: 100%;
   min-height: 100vh;
   background-color: #fff;
-  padding-bottom: 1rem;
   .record-single{
     padding: 0.4rem 0.4rem 0 0.4rem;
     position: relative;

@@ -45,7 +45,9 @@
 .manage{
   background-color: #fff;
   padding-top: 0.2rem;
-  font-size: 0.28rem;
+  width: 100%;
+  height: 100%;
+  font-size: 0.32rem;
   .weui-cells{
     margin-top: 0;
     &:before{
@@ -53,7 +55,7 @@
     }
   }
   .weui-cell{
-    font-size: 0.28rem;
+    font-size: 0.32rem;
   }
   .weui-cell__bd{
     color: #999;
@@ -75,7 +77,7 @@
       color: #fff;
       display: block;
       line-height: 0.72rem;
-      background-color: #169BD5;
+      background-color: #2ac8f5;
       border-radius: 0.1rem;
     }
   }
@@ -83,11 +85,12 @@
 .demo3-slot {
   text-align: center;
   padding: 12px 0;
-  color: #169BD5;
+  color: #2ac8f5;
   border-bottom: 1px solid #f2f2f2;
 }
 .vux-popup-dialog{
   font-size: 0.28rem !important;
+  padding: 0 0.4rem;
 }
 
 </style>

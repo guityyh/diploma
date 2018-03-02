@@ -1,6 +1,6 @@
 <template>
   <div class="docList">
-    <div class="single" v-for="i in 10">
+    <router-link tag="div" to="/docdetail" class="single" v-for="i in 10">
       <div class="portrait"><img src="./../../assets/images/docportrait.png" alt=""></div>
       <div class="title">
         <div class="call">
@@ -15,9 +15,9 @@
       </div>
       <div class="apply">
         <div class="judge">有号</div>
-        <router-link tag="div" to="/docdetail" class="button">预约</router-link>
+        <div class="button">预约</div>
       </div>
-    </div>
+    </router-link>
 
 
   </div>
@@ -34,7 +34,7 @@
   padding-bottom: 1rem;
   .single{
     background-color: #fff;
-    padding: 0.2rem 0.4rem;
+    padding: 0.3rem 0.4rem;
     margin-top: 0.18rem;
     font-size: 0.28rem;
     &:first-child{
@@ -65,7 +65,7 @@
         .honor {
           margin-left: 0.1rem;
           display: inline-block;
-          background-color: #B9EDF8;
+          background-color: #d4f4fd;
           border-radius: 0.1rem;
           padding: 0.05rem 0.1rem;
         }
@@ -92,7 +92,7 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-
+        color: #333;
       }
     }
     .apply{
@@ -106,7 +106,7 @@
         line-height: 0.52rem;
         padding: 0 0.3rem;
         border-radius: 0.1rem;
-        background-color: #169BD5;
+        background-color: #2ac8f5;
       }
     }
   }

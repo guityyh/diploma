@@ -167,7 +167,7 @@
         }
         .professor{
           display: inline-block;
-          background-color: #B9EDF8;
+          background-color: #d4f4fd;
           border-radius: 0.1rem;
           padding: 0.05rem 0.1rem;
           margin-left: 0.15rem;
@@ -196,6 +196,9 @@
         border-bottom: 1px solid #f2f2f2;
         .content{
           margin-left: 0.15rem;
+          .title{
+            font-weight: 700;
+          }
           .details{
             margin-top: 0.2rem;
             color: #666;
@@ -206,7 +209,27 @@
         border-bottom: none;
       }
     }
-
+    .vux-tab .vux-tab-item.vux-tab-selected{
+      color: #2ac8f5;
+      border-bottom: 3px solid #2ac8f5;
+    }
+    .vux-tab-bar-inner{
+      background-color: #2ac8f5;
+    }
+    .vux-tab .vux-tab-item{
+      font-size: 0.32rem;
+    }
+    .vux-prev-icon, .vux-next-icon{
+      border: 1px solid #2ac8f5;
+      border-top: none;
+      border-right: none;
+    }
+    .inline-calendar td.is-today, .inline-calendar td.is-today.is-disabled{
+      color: #2ac8f5;
+    }
+    .inline-calendar td.current > span.vux-calendar-each-date{
+      background-color: #2ac8f5;
+    }
   }
 }
 
@@ -217,7 +240,7 @@
     }
     .title{
       font-size: 0.32rem;
-      color: #169BD5;
+      color: #2ac8f5;
       line-height: 0.64rem;
       border-bottom: 1px solid #f2f2f2;
     }
@@ -259,14 +282,14 @@
         line-height: 0.52rem;
         .cancel{
           display: inline-block;
-          border: 1px solid #169BD5;
+          border: 1px solid #2ac8f5;
           padding: 0 0.4rem;
           border-radius: 0.1rem;
         }
         .submit{
           color: #fff;
           display: inline-block;
-          background-color: #169BD5;
+          background-color: #2ac8f5;
           padding: 0 0.4rem;
           border-radius: 0.1rem;
           margin-left: 0.3rem;

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="check">
     <div class="float-box">
       <checker v-model="sex" default-item-class="item" selected-item-class="item-active" radio-required>
         <checker-item value="1">男</checker-item>
@@ -65,6 +65,9 @@
 </script>
 
 <style lang='scss' scoped>
+  .check{
+    background-color: #fff;
+  }
   .float-box{
     position: absolute;
     z-index: 100;

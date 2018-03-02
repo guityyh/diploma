@@ -46,8 +46,7 @@
     flex-direction: column;
     font-size: 0;
     .portrait-background{
-      /*background-image: url("./../../assets/images/1-37.png");*/
-      background-color: dodgerblue;
+      background-image: url("./../../assets/images/mine-portrait.jpg");
       width: 100%;
       height: 3.5rem;
       text-align: center;
@@ -65,7 +64,7 @@
         }
       }
       .user-name{
-        font-size: 0.32rem;
+        font-size: 0.36rem;
         margin-top: 1rem;
       }
     }
@@ -77,7 +76,12 @@
         margin-top: 0;
       }
       .vux-label{
-        font-size: 0.28rem;
+        font-size: 0.32rem;
+      }
+      .weui-cell{
+        .iconfont{
+          /*font-weight: 700;*/
+        }
       }
     }
   }
