@@ -1,5 +1,5 @@
 <template>
-  <div class="check">
+  <div class="check-body">
     <div class="float-box">
       <checker v-model="sex" default-item-class="item" selected-item-class="item-active" radio-required>
         <checker-item value="1">男</checker-item>
@@ -65,7 +65,7 @@
 </script>
 
 <style lang='scss' scoped>
-  .check{
+  .check-body{
     background-color: #fff;
   }
   .float-box{
@@ -85,9 +85,9 @@
       transition: all linear .2s;
     }
     .item-active{
-      background: #1AAD19;
+      background: #2ac8f5;
       color: #fff;
-      border-color: #1AAD19;
+      border-color: #169BD5;
     }
   }
   .body-content{
@@ -115,15 +115,15 @@
         transform: translateX(-50%);
         background-image: url('./../../assets/images/1-19.png');
         width: 1.58rem;
-        height: 1.94rem;
-        z-index: 100;
+        height: 1.92rem;
+        z-index: 200;
         &.active{
           background-image: url('./../../assets/images/1-20.png');
         }
       }
       .neck{
-        width: 1.16rem;
-        height: 0.42rem;
+        width: 1.29rem;
+        height: 0.47rem;
         left: 50%;
         top: 1.91rem;
         transform: translateX(-50%);
@@ -173,7 +173,7 @@
         width: 0.36rem;
         height: 3.1rem;
         left: 2.04rem;
-        top: 2.136rem;
+        top: 2.18rem;
         background-image: url('./../../assets/images/1-23.png');
         z-index: 100;
         &.active{
@@ -183,8 +183,8 @@
       .right-hand{
         width: 0.36rem;
         height: 3.1rem;
-        right: 2rem;
-        top: 2.136rem;
+        right: 2.02rem;
+        top: 2.18rem;
         background-image: url('./../../assets/images/1-27.png');
         z-index: 100;
         &.active{

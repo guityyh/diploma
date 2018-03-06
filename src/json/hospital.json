@@ -1,0 +1,73 @@
+{
+  "office":[
+    {
+      "C":[
+        { "department" : "产科" , "floor" : "住院部三楼" , "id" : "1"},
+        { "department" : "耳鼻喉科" , "floor" : "门诊部四楼" , "id" : "2"}
+      ],
+      "E":[
+        { "department" : "儿科" , "floor" : "门诊部三楼" , "id" : "3"},
+        { "department" : "耳鼻喉科" , "floor" : "门诊部四楼" , "id" : "4"}
+      ],
+      "F":[
+        { "department" : "妇科" , "floor" : "门诊部二楼" , "id" : "5"},
+        { "department" : "放射科" , "floor" : "一号大楼四楼" , "id" : "6"}
+
+      ],
+      "G":[
+        { "department" : "骨科" , "floor" : "门诊部三楼" , "id" : "7"},
+        { "department" : "肝胆外科" , "floor" : "门诊部四楼" , "id" : "8"},
+        { "department" : "肛肠外科" , "floor" : "住院部四楼" , "id" : "9"}
+
+      ],
+      "H":[
+        { "department" : "呼吸内科" , "floor" : "住院部三楼" , "id" : "10"},
+        { "department" : "核医学科" , "floor" : "住院部二楼" , "id" : "11"},
+        { "department" : "护理部" , "floor" : "住院部二楼" , "id" : "12"}
+      ],
+      "J":[
+        { "department" : "检验科" , "floor" : "门诊部三楼" , "id" : "13"},
+        { "department" : "核医学科" , "floor" : "住院部二楼" , "id" : "14"}
+      ],
+      "K":[
+        { "department" : "口腔科" , "floor" : "二楼" , "id" : "15"},
+        { "department" : "康复理疗科" , "floor" : "二楼" , "id" : "16"}
+      ],
+      "M":[
+        { "department" : "泌尿外科" , "floor" : "住院部三楼" , "id" : "17"},
+        { "department" : "麻醉科" , "floor" : "住院部四楼" , "id" : "18"}
+
+      ],
+      "N":[
+        { "department" : "内分泌科" , "floor" : "住院部三楼" , "id" : "19"}
+      ],
+      "P":[
+        { "department" : "皮肤科" , "floor" : "门诊部五楼" , "id" : "20"}
+      ],
+      "R":[
+        { "department" : "乳腺甲状腺外科" , "floor" : "住院部五楼" , "id" : "21"}
+      ],
+      "S":[
+        { "department" : "神经内科" , "floor" : "门诊部五楼" , "id" : "22"},
+        { "department" : "神经外科" , "floor" : "门诊部五楼" , "id" : "23"},
+        { "department" : "肾内科" , "floor" : "一号大楼五楼" , "id" : "24"}
+      ],
+      "T":[
+        { "department" : "体检中心" , "floor" : "门诊部二楼" , "id" : "25"}
+      ],
+      "X":[
+        { "department" : "心血管内科" , "floor" : "一号大楼三楼" , "id" : "26"},
+        { "department" : "心胸外科" , "floor" : "一号大楼三楼" , "id" : "27"},
+        { "department" : "消化内科" , "floor" : "门诊二楼" , "id" : "28"},
+        { "department" : "血液科" , "floor" : "住院部二楼" , "id" : "29"},
+        { "department" : "血液净化中心" , "floor" : "住院部二楼" , "id" : "30"}
+      ],
+      "Z":[
+        { "department" : "整形、激光美容外科" , "floor" : "一号大楼四楼" , "id" : "31"},
+        { "department" : "中医、中西医结合科" , "floor" : "一号大楼三楼" , "id" : "32"},
+        { "department" : "肿瘤科" , "floor" : "一号大楼三楼" , "id" : "33"}
+
+      ]
+    }
+  ]
+}

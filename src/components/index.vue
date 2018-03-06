@@ -6,8 +6,8 @@
       <div class="registration">
         <div class="border">
           <router-link tag="div" to="/book" class="classify"><div class="classify-icon-1"><img src="./../assets/images/office.png" alt=""></div>按科室挂号</router-link>
-          <router-link tag="div" to="/doctor" class="classify"><div class="classify-icon-2"><img src="./../assets/images/doc.png" alt=""></div>按科室挂号</router-link>
-          <router-link tag="div" to="/check" class="classify"><div class="classify-icon-3"><img src="./../assets/images/diseaseslect.png" alt=""></div>按科室挂号</router-link>
+          <router-link tag="div" to="/doctor" class="classify"><div class="classify-icon-2"><img src="./../assets/images/doc.png" alt=""></div>按医生挂号</router-link>
+          <router-link tag="div" to="/check" class="classify"><div class="classify-icon-3"><img src="./../assets/images/diseaseslect.png" alt=""></div>按疾病挂号</router-link>
         </div>
       </div>
 

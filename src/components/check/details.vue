@@ -1,8 +1,8 @@
 <template>
-<div class="details">
+<div class="disease-details">
   <div class="top-bar">
     <div class="top-content">
-      <span class="title">你是否有以下症状？</span>
+      <span class="title">你是否还伴随以下症状？</span>
       <x-button mini type="primary">确定</x-button>
     </div>
     <div class="float-wrap">
@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="progress-content">
-    <div class="section-title">你是否还伴随以下症状？</div>
+    <div class="section-title">你可能的患病结果</div>
     <div class="item" v-for="item in progressJson" :key='item.title'>
       <div class="title">{{item.title}}</div>
       <x-progress :percent="item.percent" :show-cancel="false"></x-progress>
@@ -71,8 +71,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.details{
+<style lang="scss">
+.disease-details{
   background-color: #fff;
   padding-bottom: 1rem;
   .section-title{
@@ -92,7 +92,7 @@ export default {
       margin: 0;
     }
     .weui-btn_primary{
-      background-color: #169BD5;
+      background-color: #2ac8f5;
     }
     .top-content{
       border-bottom: 1px solid #e9e9e9;
@@ -111,18 +111,18 @@ export default {
         border: 1px solid #e9e9e9;
         margin: 0.14rem 0.14rem 0;
         &.active{
-          border: 1px solid #169BD5;
+          border: 1px solid #2ac8f5;
         }
       }
     }
-  }
-  .weui-progress__inner-bar{
-    background-color: #169BD5;
   }
   .progress-content{
     padding: 0 0.4rem 0.4rem;
     margin-top: 0.2rem;
     background-color: #fff;
+    .weui-progress__inner-bar{
+      background-color: #2ac8f5;
+    }
     .item{
       margin-top: 0.24rem;
       .title{
@@ -187,12 +187,12 @@ export default {
         }
       }
       .button{
-        color: #169BD5;
+        color: #2ac8f5;
         display: block;
         line-height: 0.52rem;
         padding: 0 0.3rem;
         border-radius: 0.1rem;
-        border: 1px solid #169BD5;
+        border: 1px solid #2ac8f5;
       }
 
     }
