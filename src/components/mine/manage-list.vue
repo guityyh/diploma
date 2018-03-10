@@ -1,9 +1,9 @@
 <template>
   <div class="record-list">
-    <router-link tag="div" to="/manage" class="single" v-for="i in 3">
+    <router-link tag="div" :to="{path: '/manage', query: {id: index}}" class="single" v-for="(item, index) in listData">
       <div class="definite">
-        <div class="name">刘星</div>
-        <div class="tel">电话号码：12345678912</div>
+        <div class="name">{{item.name}}</div>
+        <div class="tel">电话号码：{{item.tel}}</div>
       </div>
       <div class="iconfont icon-arrow-right"></div>
     </router-link>
@@ -15,14 +15,26 @@
 </template>
 
 <script>
-
+  export default {
+    data () {
+      return {
+        listData: []
+      }
+    },
+    created () {
+      if (localStorage.getItem('data')) {
+        this.listData = JSON.parse(localStorage.getItem('data'))
+      }
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
 .record-list{
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: #F0F0F0;
+  padding-bottom: 1rem;
   .single{
     display: flex;
     justify-content: space-between;
@@ -35,14 +47,16 @@
     &:first-child{
       margin-top: 0;
     }
+    &:last-child{
+      margin-bottom: 0.5rem;
+    }
     .name{
       font-size: 0.32rem;
     }
   }
   .button{
-    margin-top: 0.5rem;
     text-align: center;
-    padding: 0 0.4rem;
+    padding: 0.5rem 0.4rem;
     font-size: 0.28rem;
     .submit{
       color: #fff;

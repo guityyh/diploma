@@ -18,7 +18,7 @@
     </div>
     <div class="skip">
       <router-link tag="div" to="/notice" class="skip-item"><div class="icon first"><img src="./../assets/images/notice.png" alt=""></div>预约须知</router-link>
-      <router-link tag="div" to="/manage" class="skip-item"><div class="icon second"><img src="./../assets/images/record.png" alt=""></div>档案管理</router-link>
+      <router-link tag="div" to="/managelist" class="skip-item"><div class="icon second"><img src="./../assets/images/record.png" alt=""></div>档案管理</router-link>
       <div class="skip-item"><div class="icon third"><img src="./../assets/images/ask.png" alt=""></div>在线咨询</div>
     </div>
 

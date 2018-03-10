@@ -6,14 +6,14 @@
     </div>
     <div class="select">
       <group>
-        <cell :title="select1" is-link link="/manage">
-          <i slot="icon" width="20" style="display:block;margin-right:5px;" class="iconfont icon-tubiao314"></i>
+        <cell :title="select1" is-link link="/managelist">
+          <i slot="icon" width="20" style="display:block;margin-right:5px;" class="iconfont icon-icon2"></i>
         </cell>
         <cell :title="select2" is-link link="/record">
-          <i slot="icon" width="20" style="display:block;margin-right:5px;" class="iconfont icon-5"></i>
+          <i slot="icon" width="20" style="display:block;margin-right:5px;" class="iconfont icon-shouye1"></i>
         </cell>
         <cell :title="select3" is-link link="notice">
-          <i slot="icon" width="20" style="display:block;margin-right:5px;" class="iconfont icon-xuzhixianxiao"></i>
+          <i slot="icon" width="20" style="display:block;margin-right:5px;" class="iconfont icon-icon"></i>
         </cell>
       </group>
     </div>

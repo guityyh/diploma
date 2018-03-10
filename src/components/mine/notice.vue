@@ -1,12 +1,12 @@
 <template>
   <div class="notice">
     <div class="notice-refer">
-      <div class="title"><i class="iconfont icon-14"></i>咨询：</div>
+      <div class="title"><i class="iconfont icon-shouye2"></i>咨询：</div>
       <p class="paragraph">（1）门诊大厅内设咨询服务台，有专职医务人员为您服务。您在 我院就诊中有任何不明白的问题均可以直接咨询或提出服务要求。 </p>
       <p class="paragraph">（2）门诊大厅内设有大屏幕显示屏。可供您了解医院各科室专业、 出诊专家、各项检查收费标准及药品价格等情况。  </p>
     </div>
     <div class="notice-refer">
-      <div class="title"><i class="iconfont icon-yuyueguahao"></i>挂号、建卡：</div>
+      <div class="title"><i class="iconfont icon-shouye"></i>挂号、建卡：</div>
       <p class="paragraph">为了简化就诊流程，我院已全面启动一卡通实名制诊疗模式，凭诊疗卡或长城健康卡就诊。严禁使用他人的诊疗卡就诊，以免给您带来不必要的麻烦。 </p>
     </div>
   </div>
