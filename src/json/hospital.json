@@ -2,70 +2,210 @@
   "office":[
     {
       "C":[
-        { "department" : "产科" , "floor" : "住院部三楼" , "id" : "1"},
-        { "department" : "耳鼻喉科" , "floor" : "门诊部四楼" , "id" : "2"}
+        { "department" : "产科" , "floor" : "住院部三楼" , "id" : "1", "doctor" : [
+          {"avatar":"//u1.120askimages.com/9/6/2/65537269","name":"常淑燕","title":"主治医师","text":"早孕诊断，推算受孕时间及预产期，优生指导，孕期报告解读..."},
+          {"avatar":"//u1.120askimages.com/5/1/6/78775615","name":"陈琳","title":"主治医师","text":"早早孕诊断，排卵期及受孕时间精准推算，性生活后怀孕风险..."},
+          {"avatar":"//u1.120askimages.com/3/6/1/59246163","name":"刘咏梅","title":"医师","text":"先兆流产,流产,滴虫性阴道炎,念珠菌性阴道炎,小儿阴道..."},
+          {"avatar":"//u1.120askimages.com/5/6/9/56075965","name":"安静","title":"主管护师","text":"受孕日期推算，唐筛，流产保胎，孕前优生检查，正常分娩及..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/62/58ca7131429e0cb6332c6359e4d1fafa.jpg","name":"李小红","title":"主管护师","text":"擅长产科各种知识，产前诊断，产后康复，产后护理。正常产..."}
+
+        ]}
       ],
       "E":[
-        { "department" : "儿科" , "floor" : "门诊部三楼" , "id" : "3"},
-        { "department" : "耳鼻喉科" , "floor" : "门诊部四楼" , "id" : "4"}
+        { "department" : "儿科" , "floor" : "门诊部三楼" , "id" : "2" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/7/7/1/10438177","name":"于信玲","title":"副主任医师","text":"以内儿科为主的全科医疗,对脑血管疾病,糖尿病,风湿性疾..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/11/fb9832b8314f9837e60b326ced8a256c.jpg","name":"杨怀云","title":"主治医师","text":"小儿感冒，小儿扁桃体炎，小儿疱疹性咽峡炎，小儿气管炎，..."},
+          {"avatar":"//u1.120askimages.com/7/3/6/75952637","name":"范伟星","title":"主治医师","text":"早产儿,咳嗽,腹泻,小儿肠炎,便秘,消化道出血,新生儿..."},
+          {"avatar":"//u1.120askimages.com/6/7/7/73667776","name":"卢权祥","title":"主治医师","text":"儿科常见病多发病独立诊治工作，特别对呼吸系及消化系有独..."},
+          {"avatar":"//u1.120askimages.com/8/0/6/78110608","name":"刘桂国","title":"医师","text":"小儿腹泻，小儿消化不良，小儿营养，小儿厌食，新生儿病理..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/15/84001195e86051e8ba6b3624fbd05e47.jpg","name":"齐静峰","title":"医师","text":"小孩感冒，发烧，支气管炎，肺炎，小儿腹泻，小儿脑瘫、癫..."},
+          {"avatar":"//u1.120askimages.com/7/4/8/40826847","name":"张纪阳","title":"医师","text":"新生儿败血症,新生儿颅内出血,新生儿高胆红素血症,新生..."},
+          {"avatar":"//u1.120askimages.com/0/2/8/55219820","name":"孙晓庆","title":"医师","text":"新生儿黄疸,新生儿脐炎,脑炎,癫痫,先天性心脏病,腹泻..."}
+        ]},
+        { "department" : "耳鼻喉科" , "floor" : "门诊部四楼" , "id" : "3" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/3/3/0/81301033","name":"邢光海","title":"副主任医师","text":"声带息肉,扁桃体炎,中耳炎,白内障,角膜炎,青光眼,鼻..."},
+          {"avatar":"//u1.120askimages.com/3/4/2/32330243","name":"肖武","title":"主治医师","text":"分泌性中耳炎,化脓性中耳炎,耳聋,耳鸣,慢性鼻炎,慢性..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/30/a2cb4cbee5d6634c4c73ab1e333b3772.jpg","name":"罗海良","title":"医师","text":"擅长急慢性咽喉炎，慢性扁桃体炎,鼻咽炎，中耳炎，慢性鼻..."},
+          {"avatar":"//u1.120askimages.com/6/6/4/83932466","name":"孙志红","title":"医师","text":"鼻炎，痔疮，颈肩腰腿痛，肝胆结石..."},
+          {"avatar":"//u1.120askimages.com/3/9/1/65057193","name":"危福莲","title":"副主任护师","text":"鼻窦炎，中耳炎，扁桃体炎，耳廓软骨膜炎等疾病的护理。..."},
+          {"avatar":"//u1.120askimages.com/4/1/1/13503114","name":"王朋飞","title":"医师","text":"咽炎,耳鸣,耳聋,鼻窦炎,中耳炎,鼻出血,慢性鼻炎,慢..."}
+        ]}
       ],
       "F":[
-        { "department" : "妇科" , "floor" : "门诊部二楼" , "id" : "5"},
-        { "department" : "放射科" , "floor" : "一号大楼四楼" , "id" : "6"}
+        { "department" : "妇科" , "floor" : "门诊部二楼" , "id" : "4" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/2/4/6/57540642","name":"李红芳","title":"副主任医师","text":"宫颈糜烂，各种阴道炎，子宫阴道出血，早孕诊断，推算受孕..."},
+          {"avatar":"//u1.120askimages.com/1/8/1/66147181","name":"王洪娟","title":"副主任医师","text":"宫颈糜烂,稽留流产,念珠菌性阴道炎,子宫外孕,先兆流产..."},
+          {"avatar":"//u1.120askimages.com/8/5/6/62768658","name":"赵芸","title":"副主任医师","text":"功能失调性子宫出血,念珠菌性阴道炎,更年期综合症,滴虫..."},
+          {"avatar":"//u1.120askimages.com/5/8/2/82586285","name":"王雪","title":"副主任医师","text":"念珠菌性阴道炎、细菌性阴道炎、宫颈糜烂、盆腔炎、月经不..."},
+          {"avatar":"//u1.120askimages.com/8/9/5/77070598","name":"张秀琼","title":"副主任医师","text":"于分娩，高危妊娠，妊娠合并症，不孕不育，优生优育，产前..."},
+          {"avatar":"//u1.120askimages.com/4/0/8/63057804","name":"杨丽华","title":"主治医师","text":"早孕诊断，推算受孕时间、排卵时间，先兆流产宫外孕等，孕..."},
+          {"avatar":"//u1.120askimages.com/1/8/8/56440881","name":"张玉梅","title":"主治医师","text":"先兆流产，宫外孕，人工流产，药物流产，中期引产，孕期检..."}
+        ]},
+        { "department" : "放射科" , "floor" : "一号大楼四楼" , "id" : "5" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/5/7/7/60334775","name":"张西夺","title":"主治医师","text":"主要放射科和超声方面的咨询,临床方面也可..."}
+
+        ]}
 
       ],
       "G":[
-        { "department" : "骨科" , "floor" : "门诊部三楼" , "id" : "7"},
-        { "department" : "肝胆外科" , "floor" : "门诊部四楼" , "id" : "8"},
-        { "department" : "肛肠外科" , "floor" : "住院部四楼" , "id" : "9"}
+        { "department" : "骨科" , "floor" : "门诊部三楼" , "id" : "6" , "doctor" : [
+          {"avatar":"//net.120askimages.com/ztc_kw/face/41/4151b0029636a1c55afcce9283ac7902.jpg","name":"吴国兵","title":"主治医师","text":"腰椎间盘突出,骨关节炎,腱鞘炎,颈椎病,腰痛,骨折..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/63/5f2dcc8f5859cf60e212dc5666de3ab0.jpg","name":"段炼","title":"医师","text":"手足四肢外伤，骨折血管神经肌腱损伤，膝半月板交叉韧带损..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/14/7dd21654ce1c39ec7632d219e8e71f11.jpg","name":"贾永吉","title":"医师","text":"骨外科常见疾病的诊断与治疗,常见疾病后期康复治疗训练..."},
+          {"avatar":"//u1.120askimages.com/1/4/3/82441341","name":"李玉新","title":"副主任医师","text":"外科疾病如各种骨折、创伤修复、骨病、慢性损伤的治疗。对..."},
+          {"avatar":"//u1.120askimages.com/8/6/5/23080568","name":"武剑","title":"主治医师","text":"创伤,骨折,颈椎病,腰椎间盘突出,运动损伤..."},
+          {"avatar":"//u1.120askimages.com/0/0/3/77197300","name":"孔权威","title":"医师","text":"腰椎间盘突出,腰椎骨折,胫骨骨折,桡骨远端骨折,尺桡骨..."}
+        ]},
+        { "department" : "肝胆外科" , "floor" : "门诊部四楼" , "id" : "7" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/2/9/0/58912092","name":"焦丽平","title":"医师","text":"胆肝外科,十二指肠溃疡,骨科,内痔,外痔,混合痔,肛瘘..."},
+          {"avatar":"//u1.120askimages.com/0/5/9/81089950","name":"金鑫","title":"主治医师","text":"胆囊炎,胆囊癌,胆管炎,肝癌,肝硬化,肝细胞性黄疸,肝..."},
+          {"avatar":"//u1.120askimages.com/9/9/4/81688499","name":"袁虎","title":"主治医师","text":"阑尾炎，疝，胃穿孔，甲状腺等常见病的诊断与治疗！..."},
+          {"avatar":"//u1.120askimages.com/4/2/8/73482824","name":"战东旺","title":"医师","text":"病毒性肝炎,肝硬化,胆囊炎,脂肪肝,肝癌,肠炎,酒精性..."}
+        ]},
+        { "department" : "肛肠外科" , "floor" : "住院部四楼" , "id" : "8" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/4/9/4/56643494","name":"张晓阳","title":"医师","text":"肛周脓肿,,结肠炎,胃溃疡,痔疮,肛裂,肠炎,胃炎,流..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/65/480682ba6379ad6a46055e6a30d37d9c.jpg","name":"徐玉华","title":"主治医师","text":"外痔,内痔,混合痔,肛裂,肛窦炎及肛乳头炎,肛管直肠周..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/56/0328e3e3377eeeb62aa0337bb33f425e.jpg","name":"季振新","title":"医师","text":"高位复杂性肛瘘,肛周脓肿,混合痔,肛瘘,腹股沟斜疝,下..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/32/7b4e82cb855801d7098534835e2ca260.jpg","name":"马毅先","title":"医师","text":"溃疡性结肠炎,肛周脓肿,混合痔,结肠炎,肛瘘,肛裂,肠..."},
+          {"avatar":"//u1.120askimages.com/2/1/6/72778612","name":"顿帅帅","title":"医师","text":"肛周脓肿,混合痔,内痔,外痔,肛瘘,肛裂..."}
+        ]}
 
       ],
       "H":[
-        { "department" : "呼吸内科" , "floor" : "住院部三楼" , "id" : "10"},
-        { "department" : "核医学科" , "floor" : "住院部二楼" , "id" : "11"},
-        { "department" : "护理部" , "floor" : "住院部二楼" , "id" : "12"}
+        { "department" : "呼吸内科" , "floor" : "住院部三楼" , "id" : "9" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/4/0/6/61063604","name":"刘自炎","title":"主治医师","text":"感冒、发烧、咽喉炎、咳嗽、支气管炎、胃炎、胃溃疡、肠炎..."},
+          {"avatar":"//u1.120askimages.com/0/2/2/61667220","name":"毕红卫","title":"主治医师","text":"慢性支气管炎,肺炎,肺气肿,婴幼儿肺炎,支原体感染..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/62/ff10f7697b68cdfe7c26c32d369b4069.jpg","name":"周冰","title":"医师","text":"慢性阻塞性肺疾病,妊娠期合并糖尿病,感染性心内膜炎,室..."},
+          {"avatar":"//u1.120askimages.com/0/5/3/78804350","name":"李敏","title":"主治医师","text":"过敏性哮喘，急性上呼吸道感染，慢性肺源性心脏病，慢性阻..."},
+          {"avatar":"//u1.120askimages.com/9/5/5/80941559","name":"张秀云","title":"医师","text":"擅长呼吸道疾病，如慢性气管炎，肺炎，支气管哮喘等；消化..."}
+        ]},
+        { "department" : "核医学科" , "floor" : "住院部二楼" , "id" : "10"},
+        { "department" : "护理部" , "floor" : "住院部二楼" , "id" : "11"}
       ],
       "J":[
-        { "department" : "检验科" , "floor" : "门诊部三楼" , "id" : "13"},
-        { "department" : "核医学科" , "floor" : "住院部二楼" , "id" : "14"}
+        { "department" : "检验科" , "floor" : "门诊部三楼" , "id" : "12" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/1/0/9/80749901","name":"王洋洋","title":"医师","text":"常见内科疾病的诊疗，及相关报告（影像报告、超声报告、化..."}
+        ]},
+        { "department" : "核医学科" , "floor" : "住院部二楼" , "id" : "13"}
       ],
       "K":[
-        { "department" : "口腔科" , "floor" : "二楼" , "id" : "15"},
-        { "department" : "康复理疗科" , "floor" : "二楼" , "id" : "16"}
+        { "department" : "口腔科" , "floor" : "二楼" , "id" : "14" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/8/8/0/67141088","name":"王书彦","title":"副主任医师","text":"各种阻生齿拔除，牙髓炎牙体病，粘膜病，口腔各种手术。..."},
+          {"avatar":"//u1.120askimages.com/7/5/7/81131757","name":"刘明叶","title":"主治医师","text":"擅长口腔科所有常见病的诊治，尤其是义齿修复和牙齿不齐，..."},
+          {"avatar":"//u1.120askimages.com/7/8/9/27169987","name":"郑文华","title":"医师","text":"牙髓炎,口腔溃疡,面神经麻痹,慢性鼻炎,中耳炎,眩晕,..."}
+        ]},
+        { "department" : "康复理疗科" , "floor" : "二楼" , "id" : "15"}
       ],
       "M":[
-        { "department" : "泌尿外科" , "floor" : "住院部三楼" , "id" : "17"},
-        { "department" : "麻醉科" , "floor" : "住院部四楼" , "id" : "18"}
-
+        { "department" : "泌尿外科" , "floor" : "住院部三楼" , "id" : "16" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/1/3/8/23582831","name":"李娜","title":"主治医师","text":"肾病综合征,尿道感染,尿毒症,肾炎,急性肾功能衰竭,肾..."},
+          {"avatar":"//u1.120askimages.com/0/8/7/77093780","name":"余育旺","title":"主治医师","text":"泌尿系感染,乳腺增生,前列腺炎,甲状腺瘤,胆囊炎,肾结..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/32/7b4e82cb855801d7098534835e2ca260.jpg","name":"马毅先","title":"医师","text":"溃疡性结肠炎,肛周脓肿,混合痔,结肠炎,肛瘘,肛裂,肠..."},
+          {"avatar":"//u1.120askimages.com/4/4/8/76599844","name":"吴生宝","title":"医师","text":"擅于前列腺炎、包皮龟头炎、包皮过长、包茎、阳痿、早泄、..."}
+        ]},
+        { "department" : "麻醉科" , "floor" : "住院部四楼" , "id" : "17" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/8/3/3/3895338","name":"朱长海","title":"医师","text":"麻醉科，硬膜外，静脉全麻，插管全麻，局部麻醉，神经阻滞..."}
+        ]}
       ],
       "N":[
-        { "department" : "内分泌科" , "floor" : "住院部三楼" , "id" : "19"}
+        { "department" : "内分泌科" , "floor" : "住院部三楼" , "id" : "18" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/7/0/6/79784607","name":"莫瑞强","title":"主治医师","text":"营养不良,湿疹,肺炎,腹泻,支原体肺炎,急性气管支气管..."},
+          {"avatar":"//u1.120askimages.com/4/7/5/62532574","name":"姚秀清","title":"医师","text":"冠心病,糖尿病,高血压..."},
+          {"avatar":"//u1.120askimages.com/1/3/2/63071231","name":"果万山","title":"医师","text":"风湿性关节炎,肠胃炎,感冒,头痛,失眠,咳嗽,便秘..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/59/ab0b7a8494bc0c458fa9dd1d44d832f6.jpg","name":"孙振友","title":"医师","text":"急性胃十二指肠溃疡穿孔,胃十二指肠溃疡,成人腹股沟斜疝..."}
+        ]},
+        { "department" : "男科" , "floor" : "住院部四楼" , "id" : "19" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/6/3/5/52720536","name":"张素萍","title":"副主任医师","text":"不孕症,阴道炎,宫颈糜烂,子宫肌瘤,子宫腺肌症,卵巢囊..."},
+          {"avatar":"//u1.120askimages.com/9/7/2/64150279","name":"王现磊","title":"副主任医师","text":"擅长中西医结合治疗性功能障碍（阳痿、早泄、性欲减退、阴..."},
+          {"avatar":"//u1.120askimages.com/8/2/4/52870428","name":"陶爽飞","title":"副主任医师","text":"艾滋病,高危行为风险评估,梅毒,淋病,尖锐湿疣,生殖器..."},
+          {"avatar":"//u1.120askimages.com/1/8/1/58252181","name":"蔡文科","title":"主任医师","text":"淋病，非淋，尖锐湿疣生殖器疱疹，艾滋病的诊治...."}
+        ]}
       ],
       "P":[
-        { "department" : "皮肤科" , "floor" : "门诊部五楼" , "id" : "20"}
+        { "department" : "皮肤科" , "floor" : "门诊部五楼" , "id" : "20" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/6/5/3/82465356","name":"周超","title":"主治医师","text":"近视，弱视，斜视，麦粒肿，结膜炎等常见眼科疾病。..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/76/bef35db24f8ca98d5875aee3fdf95026.jpg","name":"段云飞","title":"医师","text":"擅长治疗.面部皮肤过敏，包括敏感肌肤，面部发干发红蜕皮..."}
+        ]}
       ],
       "R":[
-        { "department" : "乳腺甲状腺外科" , "floor" : "住院部五楼" , "id" : "21"}
+        { "department" : "乳腺甲状腺外科" , "floor" : "住院部五楼" , "id" : "21" , "doctor" : [
+          {"avatar":"//net.120askimages.com/ztc_kw/face/35/c8ee5c5f3624e6bfb00270207fd1ee49.jpg","name":"彭维康","title":"主治医师","text":"毒性结节性甲状腺肿,甲状腺功能减退症,甲状腺功能亢进症..."},
+          {"avatar":"//u1.120askimages.com/2/6/6/63611662","name":"梁高飞","title":"主治医师","text":"白细胞减少，白血病，淋巴瘤，血小板减少性紫癜，过敏性紫..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/43/1728d501a3f6b21fc9c23f45b43a10f7.jpg","name":"戴兵","title":"医师","text":"甲状腺功能亢进症,甲状旁腺功能减退,慢性肾小球肾炎,慢..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/13/ec62f93b5e03666fe7429882aa7c0207.jpg","name":"董春山","title":"医师","text":"甲状腺功能减退症,甲状腺功能亢进症,亚急性甲状腺炎,单..."}
+        ]}
       ],
       "S":[
-        { "department" : "神经内科" , "floor" : "门诊部五楼" , "id" : "22"},
-        { "department" : "神经外科" , "floor" : "门诊部五楼" , "id" : "23"},
-        { "department" : "肾内科" , "floor" : "一号大楼五楼" , "id" : "24"}
+        { "department" : "神经内科" , "floor" : "门诊部五楼" , "id" : "22" , "doctor" : [
+          {"avatar":"//net.120askimages.com/ztc_kw/face/70/a29fe7085fa5c30369217f301b067a77.jpg","name":"季向东","title":"副主任医师","text":"抑郁症,神经官能症,焦虑症,睡眠障碍,精神分裂症,慢性..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/64/f2298f939915ce3abf51c1393ca6d8b4.jpg","name":"初晶辉","title":"主治医师","text":"冠心病、肥胖、脑血管疾病有独到的治疗。..."},
+          {"avatar":"//u1.120askimages.com/3/4/7/60152743","name":"刘瑞华","title":"主治医师","text":"CT，核磁共振，常规放射，超声学，DSA及核医学肺部肝..."},
+          {"avatar":"//u1.120askimages.com/8/9/3/71512398","name":"刘大亮","title":"主治医师","text":"淋巴结炎,痔疮,乳腺增生,甲状腺囊肿,急性乳腺炎,毛囊..."},
+          {"avatar":"//u1.120askimages.com/9/4/1/61616149","name":"赵圣龙","title":"主治医师","text":"冠心病,心肌病,糖尿病,胃溃疡,高血压,肠炎,肺炎,肾..."},
+          {"avatar":"//u1.120askimages.com/8/6/3/30453368","name":"于刚","title":"主治医师","text":"脑梗塞,脑出血,脑动脉硬化,糖尿病,高血压,高脂血症,..."},
+          {"avatar":"//u1.120askimages.com/1/4/1/55796141","name":"王雪","title":"医师","text":"冠心病,咳嗽,腹痛,顽固性便秘..."},
+          {"avatar":"//u1.120askimages.com/1/3/4/4645431","name":"杨立勇","title":"医师","text":"恐惧症,强迫症,焦虑症,抑郁症,失眠,血管性痴呆,帕金..."},
+          {"avatar":"//u1.120askimages.com/3/6/8/1266863","name":"李勇","title":"主任医师","text":"心律失常,冠心病,心肌病,高血压..."}
+        ]},
+        { "department" : "神经外科" , "floor" : "门诊部五楼" , "id" : "23" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/4/9/5/81144594","name":"赵太启","title":"主治医师","text":"中西医结合，治疗心脑血管病，对脑梗死，心肌梗死，眩晕，..."},
+          {"avatar":"//u1.120askimages.com/2/8/2/83041282","name":"代福存","title":"主治医师","text":"脑外伤，脑出血，脑瘤，癫痫、帕金森病、神经痛等神经系统..."}
+        ]},
+        { "department" : "肾内科" , "floor" : "一号大楼五楼" , "id" : "24" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/1/8/7/80624781","name":"乔蔓丽","title":"主管护师","text":"擅长阑尾炎，胃肠穿孔修补术，甲状腺囊肿，腹股沟疝，子宫..."}
+        ]}
       ],
       "T":[
         { "department" : "体检中心" , "floor" : "门诊部二楼" , "id" : "25"}
       ],
       "X":[
-        { "department" : "心血管内科" , "floor" : "一号大楼三楼" , "id" : "26"},
-        { "department" : "心胸外科" , "floor" : "一号大楼三楼" , "id" : "27"},
-        { "department" : "消化内科" , "floor" : "门诊二楼" , "id" : "28"},
-        { "department" : "血液科" , "floor" : "住院部二楼" , "id" : "29"},
+        { "department" : "心血管内科" , "floor" : "一号大楼三楼" , "id" : "26" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/5/4/9/38675945","name":"侯争飞","title":"主治医师","text":"先天性心脏病，艾滋梅毒，高血压尖锐湿疣，早博，心跳快，..."},
+          {"avatar":"//u1.120askimages.com/0/4/0/35162040","name":"刘胜华","title":"主治医师","text":"高血压,冠心病,心律失常..."},
+          {"avatar":"//u1.120askimages.com/3/2/1/69569123","name":"李连平","title":"主任医师","text":"冠心病，心肌梗塞，脑梗塞，脑出血，高血压，糖尿病等疾病..."},
+          {"avatar":"//u1.120askimages.com/0/5/4/81547450","name":"彭冬迪","title":"主任医师","text":"高血压，高血脂，冠心病，慢性心衰，心律失常等诊疗。..."}
+        ]},
+        { "department" : "心胸外科" , "floor" : "一号大楼三楼" , "id" : "27" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/3/9/2/62403293","name":"高伟栋","title":"医师","text":"慢性鼻炎,过敏性鼻炎,慢性咽炎,声带息肉,喉炎,睡眠呼..."}
+        ]},
+        { "department" : "消化内科" , "floor" : "门诊二楼" , "id" : "28" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/9/3/6/80585639","name":"刘亮","title":"主治医师","text":"急性胃炎,胃癌,成人腹股沟斜疝,大肠癌,胆囊炎,急性胰..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/32/fb577e980675cae874a4956e5f1937c3.jpg","name":"邓有周","title":"主治医师","text":"胃炎,胃溃疡,肠炎,痢疾,糖尿病,高血压,脑梗塞..."},
+          {"avatar":"//u1.120askimages.com/2/5/7/58730752","name":"沈鹏飞","title":"医师","text":"上消化道出血,十二指肠溃疡,原发性高血压,腰椎间盘突出..."},
+          {"avatar":"//u1.120askimages.com/8/6/4/38363468","name":"路涛","title":"医师","text":"反流性食管炎,幽门螺杆菌感染,胃溃疡,十二指肠溃疡,B..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/61/c05556c0b8b22d19da665af35946abf7.jpg","name":"吴俊锋","title":"医师","text":"胃溃疡，十二脂肠溃疡，胃痛，胃胀，胃反酸，恶心，呕吐，..."},
+          {"avatar":"//u1.120askimages.com/6/7/2/76678276","name":"胡宇","title":"副主任医师","text":"消化道恶性肿瘤、肺癌、乳腺癌、恶性淋巴瘤、头颈部肿瘤、..."},
+          {"avatar":"//u1.120askimages.com/1/6/1/68168161","name":"曹宏春","title":"副主任医师","text":"十二指肠溃疡,结核性腹膜炎,溃疡性结肠炎,消化道出血,..."}
+
+        ]},
+        { "department" : "血液科" , "floor" : "住院部二楼" , "id" : "29" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/8/7/1/83455178","name":"盛秀云","title":"主治医师","text":"血液疾病，营养不良性贫血，再生障碍性贫血，恶性肿瘤化疗..."}
+
+        ]},
         { "department" : "血液净化中心" , "floor" : "住院部二楼" , "id" : "30"}
       ],
+      "Y":[
+        { "department" : "眼科" , "floor" : "一号大楼五楼" , "id" : "31" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/6/5/3/82465356","name":"周超","title":"主治医师","text":"近视，弱视，斜视，麦粒肿，结膜炎等常见眼科疾病。..."},
+          {"avatar":"//net.120askimages.com/ztc_kw/face/65/d5ead083134a31f03c59dd42406106e2.jpg","name":"曾明范","title":"医师","text":"白内障，青光眼，葡萄膜炎，近视，远视，弱视..."}
+
+        ]}
+      ],
       "Z":[
-        { "department" : "整形、激光美容外科" , "floor" : "一号大楼四楼" , "id" : "31"},
-        { "department" : "中医、中西医结合科" , "floor" : "一号大楼三楼" , "id" : "32"},
-        { "department" : "肿瘤科" , "floor" : "一号大楼三楼" , "id" : "33"}
+        { "department" : "整形、激光美容外科" , "floor" : "一号大楼四楼" , "id" : "32" , "doctor" : [
+          {"avatar":"//net.120askimages.com/ztc_kw/face/69/1a6d772f7f624564a845fe55e5a00749.jpg","name":"史伟萍","title":"主治医师","text":"美学修复、种植牙、复杂牙拔除、龋齿、根管治疗及牙周治疗..."},
+          {"avatar":"//u1.120askimages.com/5/3/3/75853335","name":"谢远亮","title":"主治医师","text":"双眼皮，去眼袋，面颈部除皱，隆鼻，隆下颌，隆胸，抽脂，..."},
+          {"avatar":"//u1.120askimages.com/3/7/3/22700373","name":"苏国宗","title":"医师","text":"牛皮癣,疱疹,酒渣鼻,脓疱疮,化脓菌感染,疤痕,癣,鱼..."}
+        ]},
+        { "department" : "中医、中西医结合科" , "floor" : "一号大楼三楼" , "id" : "33" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/6/7/8/80918876","name":"耿静","title":"主任医师","text":"用中医经方调理体质，治疗中医内科以及妇科等疑难杂症。如..."},
+          {"avatar":"//u1.120askimages.com/7/3/2/72907237","name":"袁志辉","title":"医师","text":"中医内科妇科针灸，西医常见病。..."}
+
+        ]},
+        { "department" : "肿瘤科" , "floor" : "一号大楼三楼" , "id" : "34" , "doctor" : [
+          {"avatar":"//u1.120askimages.com/2/3/9/75808932","name":"赵畅","title":"医师","text":"胆囊炎,胆囊癌,胆管炎,胰腺炎,胰腺癌,肝癌,门静脉高..."},
+          {"avatar":"//u1.120askimages.com/4/9/6/709694","name":"高强","title":"医师","text":"肾结石,输尿管结石,胆结石,甲状腺囊肿,骨折,胃癌,乙..."}
+        ]}
 
       ]
     }
