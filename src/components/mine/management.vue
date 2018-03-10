@@ -1,41 +1,97 @@
 <template>
   <div class="manage">
     <group>
-      <x-input title="姓名：" novalidate :icon-type="iconType" :show-clear="iconState" @on-blur="onBlur"></x-input>
-      <popup-radio title="性别：" :options="options3">
+      <x-input title="姓名：" name="username" is-type="china-name" v-model="manageName"></x-input>
+      <popup-radio title="性别：" :options="options3" v-model="manageSex">
         <p slot="popup-header" class="vux-1px-b demo3-slot">请选择</p>
       </popup-radio>
-      <x-input title="年龄：" novalidate :icon-type="iconType" :show-clear="iconState"></x-input>
-      <x-input title="身份证号：" novalidate :icon-type="iconType" :show-clear="iconState"></x-input>
-      <x-input title="手机号：" novalidate :icon-type="iconType" :show-clear="iconState"></x-input>
+      <popup-picker title="年龄：" :data="ageList" v-model="manageAge" ></popup-picker>
+      <x-input title="身份证号：" :icon-type="iconType" :show-clear="iconState" type="number" :min=18 :max=18 v-model="manageCard"></x-input>
+      <x-input title="手机号码：" name="mobile" keyboard="number" :min=11 :max=11 is-type="china-mobile" ref="mobile" v-model="manageTel"></x-input>
     </group>
 
     <div class="button">
-      <router-link tag="div" to="/managelist" href="##" class="submit">保存</router-link>
+      <div class="submit" @click="_localStorage">保存</div>
     </div>
 
   </div>
 </template>
 
 <script>
-  import { XInput, Group, PopupRadio } from 'vux'
+  import { XInput, Group, PopupRadio, PopupPicker } from 'vux'
 
   export default {
     components: {
       XInput,
       Group,
-      PopupRadio
+      PopupRadio,
+      PopupPicker
     },
     data () {
       return {
         iconType: '',
         iconState: '',
-        options3: ['男', '女']
+        options3: ['男', '女'],
+        ageList: [[]],
+        manageName: '',
+        manageSex: '',
+        manageAge: [],
+        manageCard: '',
+        manageTel: ''
       }
+    },
+    created () {
+      if (this.$route.query.id >= 0) {
+        const data = JSON.parse(localStorage.getItem('data'))[this.$route.query.id]
+        console.log(data)
+        this.manageName = data.name,
+        this.manageSex = data.sex,
+        this.manageAge.push(data.age),
+        this.manageCard = data.card,
+        this.manageTel = data.tel
+      }
+      for (let i=1; i<100; i++) {
+        this.ageList[0].push(i + '')
+      }
+
     },
     methods:{
       onBlur () {
         this.iconState = false
+      },
+      _localStorage () {
+        if (!this.manageName) {
+          this.toast('请您输入姓名')
+          return
+        }else if (!this.manageSex) {
+          this.toast('请选择您的性别')
+          return
+        }else if (!this.manageAge[0]) {
+          this.toast('请选择您的年龄')
+          return
+        }else if (this.manageCard.length !== 18) {
+          this.toast('请输入正确的身份证号')
+          return
+        }else if (this.$refs.mobile.valid === false) {
+          this.toast('请输入正确的联系方式')
+          return
+        }
+        let arr = JSON.parse(localStorage.getItem('data')) || [];
+        let obj = {
+          name: this.manageName,
+          sex: this.manageSex,
+          age: this.manageAge[0],
+          card: this.manageCard,
+          tel: this.manageTel
+        }
+        if (this.$route.query.id >= 0) {
+          arr[this.$route.query.id] = obj
+        } else {
+          arr.push(obj)
+        }
+        arr = JSON.stringify(arr)
+        localStorage.setItem('data', arr)
+        this.$router.go(-1)
       }
     }
   }
@@ -66,6 +122,9 @@
   .vux-label{
     width: 4em;
   }
+  .vux-x-input-kvbnz{
+    width: 4em;
+  }
   .vux-cell-primary{
     flex: 0;
   }
@@ -90,7 +149,14 @@
 }
 .vux-popup-dialog{
   font-size: 0.28rem !important;
-  padding: 0 0.4rem;
 }
-
+.vux-cell-box .weui-cell__hd{
+  width: 4em;
+}
+.vux-popup-header-right{
+  color: #2ac8f5 !important;
+}
+.weui-cells_radio .weui-check:checked + .weui-icon-checked:before{
+  color: #2ac8f5 !important;
+}
 </style>

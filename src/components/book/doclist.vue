@@ -9,7 +9,7 @@
         </div>
         <div class="where">
           <div class="office">儿科</div>
-          <div class="float">二楼</div>
+          <!--<div class="float">二楼</div>-->
         </div>
         <div class="skilled">擅长：小儿推拿、整脊、疝气小儿推拿</div>
       </div>
@@ -88,6 +88,7 @@
         }
       }
       .skilled{
+        /*margin-top: 0.2rem;*/
         height: 0.3rem;
         overflow: hidden;
         white-space: nowrap;

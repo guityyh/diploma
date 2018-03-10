@@ -5,6 +5,18 @@ import FastClick from 'fastclick'
 import router from '@/router/index'
 import App from './App'
 
+import { ToastPlugin} from 'vux'
+Vue.use(ToastPlugin)
+
+Vue.prototype.toast = function (text, type = 'text', position = 'middle') {
+  this.$vux.toast.show({
+    text: text,
+    position: position,
+    type: type,
+    width: 'auto'
+  })
+}
+
 FastClick.attach(document.body)
 
 Vue.config.productionTip = false

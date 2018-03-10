@@ -34,6 +34,9 @@
     color: #999;
     padding-bottom: 0.2rem;
     border-bottom: 1px solid #f2f2f2;
+    .title-call{
+      color: #2ac8f5;
+    }
     .title-state{
       text-decoration: underline;
     }
