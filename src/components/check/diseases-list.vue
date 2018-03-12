@@ -1,22 +1,81 @@
 <template>
   <div class="container">
     <div class="left-list">
-      <div class="item" v-for="i in 10">
+      <div class="item" :class="{active: activePart == 'body'}" @click="part('body')">
+        <i class="iconfont icon-toutong"></i>
+        <p class="text">全身症状</p>
+      </div>
+      <div class="item" :class="{active: activePart == 'skin'}" @click="part('skin')">
+        <i class="iconfont icon-toutong"></i>
+        <p class="text">皮肤症状</p>
+      </div>
+      <div class="item" :class="{active: activePart == 'head'}" @click="part('head')">
         <i class="iconfont icon-toutong"></i>
         <p class="text">头部</p>
       </div>
+      <div class="item" :class="{active: activePart == 'neck'}" @click="part('neck')">
+        <i class="iconfont icon-toutong"></i>
+        <p class="text">咽颈部</p>
+      </div>
+      <div class="item" :class="{active: activePart == 'chest'}" @click="part('chest')">
+        <i class="iconfont icon-toutong"></i>
+        <p class="text">胸部</p>
+      </div>
+      <div class="item" :class="{active: activePart == 'waist'}" @click="part('waist')">
+        <i class="iconfont icon-toutong"></i>
+        <p class="text">腹部</p>
+      </div>
+      <div class="item" :class="{active: activePart == 'panties'}" @click="part('panties')">
+        <i class="iconfont icon-toutong"></i>
+        <p class="text">生殖部位</p>
+      </div>
+      <div class="item" :class="{active: activePart == 'pelvis'}" @click="part('pelvis')">
+        <i class="iconfont icon-toutong"></i>
+        <p class="text">盆骨</p>
+      </div>
+      <div class="item" :class="{active: activePart == 'legs'}" @click="part('legs')">
+        <i class="iconfont icon-toutong"></i>
+        <p class="text">四肢</p>
+      </div>
+      <div class="item" :class="{active: activePart == 'back'}" @click="part('back')">
+        <i class="iconfont icon-toutong"></i>
+        <p class="text">腰背部</p>
+      </div>
+      <div class="item" :class="{active: activePart == 'hip'}" @click="part('hip')">
+        <i class="iconfont icon-toutong"></i>
+        <p class="text">臀部及肛门</p>
+      </div>
     </div>
     <router-link tag="div" to="/details" class="right-list">
-      <div class="item" v-for="i in 20">打喷嚏</div>
-      <div class="item">喘不过来气</div>
+      <div class="item" v-for="(item, index) in diseasesList" :key="index">{{item.content}}</div>
     </router-link>
   </div>
 </template>
 
 <script>
-export default {
+  import girl from '@/json/diseasegirl.json'
+  import boy from '@/json/diseaseboy.json'
 
-}
+
+  export default {
+    data () {
+      return {
+        activePart: '',
+        diseasesList: []
+      }
+    },
+    created () {
+      this.part()
+    },
+    methods: {
+      part (part = this.$route.query.part) {
+        const sex = this.$route.query.sex
+        this.activePart = part
+        this.diseasesList = sex === '1' ? boy[part] : girl[part]
+        console.log(boy[part])
+      }
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -24,6 +83,7 @@ export default {
   display: flex;
   align-items: flex-start;
   background-color: #fff;
+  padding-bottom: 1rem;
   .left-list{
     width: 30%;
     height: 100vh;

@@ -19,7 +19,7 @@
     <div class="skip">
       <router-link tag="div" to="/notice" class="skip-item"><div class="icon first"><img src="./../assets/images/notice.png" alt=""></div>预约须知</router-link>
       <router-link tag="div" to="/managelist" class="skip-item"><div class="icon second"><img src="./../assets/images/record.png" alt=""></div>档案管理</router-link>
-      <div class="skip-item"><div class="icon third"><img src="./../assets/images/ask.png" alt=""></div>在线咨询</div>
+      <a href="https://www.sobot.com/chat/h5/index.html?sysNum=d49779395d294b91b7e42c1776a10050" class="skip-item"><div class="icon third"><img src="./../assets/images/ask.png" alt=""></div>在线咨询</a>
     </div>
 
     <div class="definite">
@@ -165,6 +165,7 @@ export default {
     .skip-item{
       flex: 1;
       position: relative;
+      color: #000;
       &:nth-of-type(2){
         & > .icon:after{
           content: '';

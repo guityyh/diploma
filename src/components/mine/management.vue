@@ -43,7 +43,6 @@
     created () {
       if (this.$route.query.id >= 0) {
         const data = JSON.parse(localStorage.getItem('data'))[this.$route.query.id]
-        console.log(data)
         this.manageName = data.name,
         this.manageSex = data.sex,
         this.manageAge.push(data.age),

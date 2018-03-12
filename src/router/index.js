@@ -154,6 +154,16 @@ export default new Router({
       component: function (resolve) {
         require(['../components/mine/manage-list.vue'], resolve)
       }
+    },
+    {
+      path: '/doctor',
+      meta: {
+        name: 'doctor',
+        title: '医生列表'
+      },
+      component: function (resolve) {
+        require(['../components/book/doctor.vue'], resolve)
+      }
     }
   ]
 })

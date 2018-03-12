@@ -9,28 +9,28 @@
 
     <div class="body-content boy" v-if="sex === '1'">
       <div class="content">
-        <router-link tag="div" to="/diseases" class="body-item head" :class="{active: activeClass === 1}" @touchstart = 'active(1)' @touchend = 'activeClass = 0'></router-link>
-        <div class="body-item neck" :class="{active: activeClass === 2}" @touchstart = 'active(2)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item chest" :class="{active: activeClass === 3}" @touchstart = 'active(3)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item waist" :class="{active: activeClass === 4}" @touchstart = 'active(4)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item panties" :class="{active: activeClass === 5}" @touchstart = 'active(5)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item left-hand" :class="{active: activeClass === 6}" @touchstart = 'active(6)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item right-hand" :class="{active: activeClass === 7}" @touchstart = 'active(7)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item left-leg" :class="{active: activeClass === 8}" @touchstart = 'active(8)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item right-leg" :class="{active: activeClass === 9}" @touchstart = 'active(9)' @touchend = 'activeClass = 0'></div>
+        <div class="body-item head" :class="{active: activeClass === 1}" @touchstart = 'active(1)' @touchend = 'goDiseases("head")'></div>
+        <div class="body-item neck" :class="{active: activeClass === 2}" @touchstart = 'active(2)' @touchend = 'goDiseases("neck")'></div>
+        <div class="body-item chest" :class="{active: activeClass === 3}" @touchstart = 'active(3)' @touchend = 'goDiseases("chest")'></div>
+        <div class="body-item waist" :class="{active: activeClass === 4}" @touchstart = 'active(4)' @touchend = 'goDiseases("waist")'></div>
+        <div class="body-item panties" :class="{active: activeClass === 5}" @touchstart = 'active(5)' @touchend = 'goDiseases("panties")'></div>
+        <div class="body-item left-hand" :class="{active: activeClass === 6}" @touchstart = 'active(6)' @touchend = 'goDiseases("legs")'></div>
+        <div class="body-item right-hand" :class="{active: activeClass === 7}" @touchstart = 'active(7)' @touchend = 'goDiseases("legs")'></div>
+        <div class="body-item left-leg" :class="{active: activeClass === 8}" @touchstart = 'active(8)' @touchend = 'goDiseases("legs")'></div>
+        <div class="body-item right-leg" :class="{active: activeClass === 9}" @touchstart = 'active(9)' @touchend = 'goDiseases("legs")'></div>
       </div>
     </div>
     <div class="body-content girl" v-if="sex === '2'">
       <div class="content">
-        <div class="body-item head" :class="{active: activeClass === 10}" @touchstart = 'active(10)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item neck" :class="{active: activeClass === 11}" @touchstart = 'active(11)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item chest" :class="{active: activeClass === 12}" @touchstart = 'active(12)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item waist" :class="{active: activeClass === 13}" @touchstart = 'active(13)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item panties" :class="{active: activeClass === 14}" @touchstart = 'active(14)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item left-hand" :class="{active: activeClass === 15}" @touchstart = 'active(15)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item right-hand" :class="{active: activeClass === 16}" @touchstart = 'active(16)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item left-leg" :class="{active: activeClass === 17}" @touchstart = 'active(17)' @touchend = 'activeClass = 0'></div>
-        <div class="body-item right-leg" :class="{active: activeClass === 18}" @touchstart = 'active(18)' @touchend = 'activeClass = 0'></div>
+        <div class="body-item head" :class="{active: activeClass === 10}" @touchstart = 'active(10)' @touchend = 'goDiseases("head")'></div>
+        <div class="body-item neck" :class="{active: activeClass === 11}" @touchstart = 'active(11)' @touchend = 'goDiseases("neck")'></div>
+        <div class="body-item chest" :class="{active: activeClass === 12}" @touchstart = 'active(12)' @touchend = 'goDiseases("chest")'></div>
+        <div class="body-item waist" :class="{active: activeClass === 13}" @touchstart = 'active(13)' @touchend = 'goDiseases("waist")'></div>
+        <div class="body-item panties" :class="{active: activeClass === 14}" @touchstart = 'active(14)' @touchend = 'goDiseases("panties")'></div>
+        <div class="body-item left-hand" :class="{active: activeClass === 15}" @touchstart = 'active(15)' @touchend = 'goDiseases("legs")'></div>
+        <div class="body-item right-hand" :class="{active: activeClass === 16}" @touchstart = 'active(16)' @touchend = 'goDiseases("legs")'></div>
+        <div class="body-item left-leg" :class="{active: activeClass === 17}" @touchstart = 'active(17)' @touchend = 'goDiseases("legs")'></div>
+        <div class="body-item right-leg" :class="{active: activeClass === 18}" @touchstart = 'active(18)' @touchend = 'goDiseases("legs")'></div>
       </div>
     </div>
   </div>
@@ -59,6 +59,9 @@
       },
       endActive () {
         console.log(this.activeClass)
+      },
+      goDiseases (title) {
+        this.$router.push({path: '/diseases', query: {sex: this.sex, part: title}})
       }
     }
   }

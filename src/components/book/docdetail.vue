@@ -1,13 +1,13 @@
 <template>
   <div class="docdetail">
     <div class="call">
-      <div class="portrait"><img src="./../../assets/images/docportrait.png" alt=""></div>
+      <div class="portrait"><img :src="doctorDetail.avatar"></div>
       <div class="definite">
         <div class="job">
-          <div class="name">安德拉</div>
-          <div class="professor">一级专家</div>
+          <div class="name">{{doctorDetail.name}}</div>
+          <div class="professor">{{doctorDetail.title}}</div>
         </div>
-        <div class="office">科室：儿科</div>
+        <div class="office">科室：{{doctorDetail.department}}</div>
       </div>
     </div>
 
@@ -38,7 +38,7 @@
             <div class="icon"><i class="iconfont icon-shouye5"></i></div>
             <div class="content">
               <div class="title">擅长</div>
-              <div class="details">小儿麻痹症、小儿发烧、小儿感冒</div>
+              <div class="details">{{doctorDetail.text}}</div>
             </div>
           </div>
           <div class="introduce">
@@ -56,13 +56,13 @@
       <x-dialog :show.sync="show2" :hide-on-blur="true" class="dialog-demo">
         <div class="title">预约信息</div>
         <div class="dialog-content">
-          <div class="office"><span class="six">就诊科室：</span>{{department}}</div>
-          <div class="name"><span class="six">医生姓名：</span>{{docName}}</div>
-          <group>
+          <div class="office"><span class="six">就诊科室：</span>{{doctorDetail.department}}</div>
+          <div class="name"><span class="six">医生姓名：</span>{{doctorDetail.name}}</div>
+            <group>
             <cell :title="clinicTime" :value="value" v-model="value"></cell>
             <selector placeholder="请选择就诊时段" v-model="patientFrame" ref="pFrame" title="就诊时段：" name="district" :options="frameList"></selector>
           </group>
-          <div class="place"><span class="six">就诊地点：</span>{{where}}</div>
+          <div class="place"><span class="six">就诊地点：</span>{{doctorDetail.floor}}</div>
           <group>
             <x-input title=" 就诊人：" v-if="firstClick" label-width="5em" placeholder="请输入就诊人姓名" novalidate :show-clear="false" @on-focus="_onFocus" placeholder-align="left"></x-input>
             <selector placeholder="请输入就诊人姓名" v-else v-model="patientName" ref="pName" title="就诊人：" name="district" :options="patientList" @on-change="selectPatient"></selector>
@@ -120,7 +120,12 @@
         department: '儿科',
         docName: '123',
         where: '儿科',
-        frameList: [{key: 'am', value: '上午'}, {key: 'pm', value: '下午'}],
+        frameList: [{key: '上午', value: '上午'}, {key: '下午', value: '下午'}],
+      }
+    },
+    computed: {
+      doctorDetail () {
+        return this.$store.state.doctorDetails
       }
     },
     created () {
@@ -166,28 +171,30 @@
       },
       onChange () {
         this.show2 = true
+        this.$nextTick(() => {
+          console.log(this.value)
+        })
       },
       closeDialog () {
         this.show2 = false
       },
       async bookInformation () {
         var obj = {
-          department: this.department,
-          doctor: this.docName,
+          department: this.doctorDetail.department,
+          doctor: this.doctorDetail.name,
           visit_date: this.value,
           visit_time: this.patientFrame,
-          visit_address: this.where,
+          visit_address: this.doctorDetail.floor,
           visit_username: this.patientName,
           visit_phone: this.bookTel,
           visit_id_number: this.bookCard
         }
-        console.log(this.value)
         const {data: {code}} = await axios.post('http://diploma.wbloc.com/api/order/add', obj)
         if (code === 200) {
           setTimeout (() => {
-            this.toast('预约成功')
-            this.$router.go('/managelist')
+            this.$router.push('/record')
           },500)
+          this.toast('预约成功')
         }else {
           this.toast('预约失败，请您重新预约')
         }
@@ -248,6 +255,7 @@
     padding: 0.3rem 0.4rem 0;
     .detail{
       margin-top: 0.4rem;
+      line-height: 0.42rem;
       .speciality, .introduce{
         display: flex;
         align-items: flex-start;
