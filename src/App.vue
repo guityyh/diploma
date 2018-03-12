@@ -21,4 +21,8 @@ export default {
 body {
   background-color: #F0F0F0;
 }
+
+.weui-toast.weui-toast_text{
+  white-space: nowrap !important;
+}
 </style>

@@ -4,16 +4,16 @@
       <div class="title-call">预约详情</div>
       <div class="title-state" @click="alertConfirm">{{bookState}}</div>
     </div>
-    <div class="details-item">预约科室：耳鼻喉科</div>
-    <div class="details-item">预约医生：安德拉</div>
-    <div class="details-item">就诊日期：2018-1-26</div>
-    <div class="details-item">就诊时段：上午9:00-11:00</div>
+    <div class="details-item">预约科室：{{definiteInfo.department}}</div>
+    <div class="details-item">预约医生：{{definiteInfo.doctor}}</div>
+    <div class="details-item">就诊日期：{{definiteInfo.visit_date}}</div>
+    <div class="details-item">就诊时段：{{definiteInfo.visit_time}}</div>
     <div class="details-item">挂号费用：13元</div>
-    <div class="details-item">就诊地点：门诊大楼二楼D区17诊室</div>
-    <div class="details-item">就诊人：李星</div>
-    <div class="details-item">身份证：513022198412350123</div>
-    <div class="details-item">电话号码：18714521235</div>
-    <div class="details-item">填写时间：2018.01.06  14:52</div>
+    <div class="details-item">就诊地点：{{definiteInfo.visit_address}}</div>
+    <div class="details-item">就诊人：{{definiteInfo.visit_username}}</div>
+    <div class="details-item">身份证：{{definiteInfo.visit_id_number}}</div>
+    <div class="details-item">电话号码：{{definiteInfo.visit_phone}}</div>
+    <div class="details-item">填写时间：{{definiteInfo.create_time}}</div>
 
     <div v-transfer-dom>
       <confirm
@@ -29,6 +29,7 @@
 
 <script>
   import { TransferDomDirective as TransferDom , Confirm } from 'vux'
+  import axios from '@/api'
   export default {
     directives: {
       TransferDom
@@ -39,19 +40,37 @@
     data () {
       return {
         showConfirm : false,
-        bookState: '取消预约'
+        bookState: '',
+        definiteInfo: ''
       }
     },
-    created () {
+     async created () {
+       const {data: {code , data}} = await axios.get('http://diploma.wbloc.com/api/order/info', {id: this.$route.query.id})
+       if (code === 200) {
+         this.definiteInfo = data
+         console.log(this.definiteInfo)
+         if (this.definiteInfo.status === 0) {
+           this.bookState = '取消预约'
+         }else if (this.definiteInfo.status === -1) {
+           this.bookState = '已取消'
+         }if (this.definiteInfo.status === 1) {
+           this.bookState = '已就诊'
+         }
+       }
 
     },
     methods: {
-      onConfirm4 () {
-        this.bookState = '已取消'
-        this.showConfirm = false
+      async onConfirm4 () {
+        const {data: {code}} = await axios.post('http://diploma.wbloc.com/api/order/setStauts', {id: this.$route.query.id})
+        if ( code === 200 ) {
+          this.bookState = '已取消'
+          this.showConfirm = false
+        }
       },
       alertConfirm () {
-        this.showConfirm = true
+        if (this.definiteInfo.status === 0) {
+          this.showConfirm = true
+        }
       }
     }
   }

@@ -56,13 +56,13 @@
       <x-dialog :show.sync="show2" :hide-on-blur="true" class="dialog-demo">
         <div class="title">预约信息</div>
         <div class="dialog-content">
-          <div class="office"><span class="six">就诊科室：</span>儿科</div>
-          <div class="name"><span class="six">医生姓名：</span>安德拉</div>
+          <div class="office"><span class="six">就诊科室：</span>{{department}}</div>
+          <div class="name"><span class="six">医生姓名：</span>{{docName}}</div>
           <group>
-            <cell :title="clinicTime" :value="value"></cell>
+            <cell :title="clinicTime" :value="value" v-model="value"></cell>
             <selector placeholder="请选择就诊时段" v-model="patientFrame" ref="pFrame" title="就诊时段：" name="district" :options="frameList"></selector>
           </group>
-          <div class="place"><span class="six">就诊地点：</span>门诊大楼二楼D区17诊室</div>
+          <div class="place"><span class="six">就诊地点：</span>{{where}}</div>
           <group>
             <x-input title=" 就诊人：" v-if="firstClick" label-width="5em" placeholder="请输入就诊人姓名" novalidate :show-clear="false" @on-focus="_onFocus" placeholder-align="left"></x-input>
             <selector placeholder="请输入就诊人姓名" v-else v-model="patientName" ref="pName" title="就诊人：" name="district" :options="patientList" @on-change="selectPatient"></selector>
@@ -72,7 +72,7 @@
           <div class="price">挂号费用：<span class="red">13</span> 元</div>
           <div class="button">
             <div class="cancel" @click="closeDialog">取消</div>
-            <router-link tag="div" to="/bookdetails" href="##" class="submit">提交</router-link>
+            <div class="submit" @click="bookInformation">提交</div>
           </div>
         </div>
       </x-dialog>
@@ -83,6 +83,7 @@
 
 <script>
   import { Tab, TabItem, InlineCalendar, XDialog, TransferDomDirective as TransferDom, XInput, Group, Cell, Selector } from 'vux'
+  import axios from '@/api'
 
   export default {
     directives: {
@@ -116,6 +117,9 @@
         bookTel: '',
         bookCard: '',
         patientFrame: '',
+        department: '儿科',
+        docName: '123',
+        where: '儿科',
         frameList: [{key: 'am', value: '上午'}, {key: 'pm', value: '下午'}],
       }
     },
@@ -165,6 +169,29 @@
       },
       closeDialog () {
         this.show2 = false
+      },
+      async bookInformation () {
+        var obj = {
+          department: this.department,
+          doctor: this.docName,
+          visit_date: this.value,
+          visit_time: this.patientFrame,
+          visit_address: this.where,
+          visit_username: this.patientName,
+          visit_phone: this.bookTel,
+          visit_id_number: this.bookCard
+        }
+        console.log(this.value)
+        const {data: {code}} = await axios.post('http://diploma.wbloc.com/api/order/add', obj)
+        if (code === 200) {
+          setTimeout (() => {
+            this.toast('预约成功')
+            this.$router.go('/managelist')
+          },500)
+        }else {
+          this.toast('预约失败，请您重新预约')
+        }
+
       }
     }
   }

@@ -1,22 +1,41 @@
 <template>
   <div class="record">
-    <router-link tag="div" to="/bookdetails" class="record-single" v-for="i in 3">
-      <div class="border">
+    <div class="record-single" v-for="(item, index) in bookList" :key="item.id" v-if="bookList.length > 0" >
+      <router-link tag="div" :to="{path: 'bookdetails', query: {id: item.id}}" class="border" @click="goBookDetail">
         <div class="single-content">
-          <div class="name"><span class="call">安德拉</span><span>主治医师</span></div>
-          <div class="definite"><span class="office">耳鼻喉科</span><span class="time">2018.01.06</span></div>
+          <div class="name"><span class="call">{{item.doctor}}</span></div>
+          <div class="definite"><span class="office">{{item.department}}</span><span class="time">{{item.create_time}}</span></div>
         </div>
         <div class="single-arrow">
-          <div class="state">已就诊</div>
+          <div class="state">{{item.status_text}}</div>
           <div class="iconfont icon-arrow-right"></div>
         </div>
-      </div>
-    </router-link>
+      </router-link>
+    </div>
   </div>
 </template>
 
 <script>
+  import axios from '@/api'
 
+  export default {
+    data () {
+      return {
+        bookList: []
+      }
+    },
+    async created () {
+      const {data: {code, data}} = await axios.get('http://diploma.wbloc.com/api/order/lists')
+      if (code === 200) {
+        this.bookList = data
+      }
+    },
+    methods: {
+      goBookDetail () {
+
+      }
+    }
+  }
 </script>
 
 <style lang="scss" scoped>
@@ -24,15 +43,16 @@
   width: 100%;
   min-height: 100vh;
   background-color: #fff;
+  padding-bottom: 1rem;
   .record-single{
-    padding: 0.4rem 0.4rem 0 0.4rem;
+    padding: 0 0.4rem;
     position: relative;
     .border{
       display: flex;
       justify-content: space-between;
       align-content: center;
       font-size: 0.28rem;
-      padding-bottom: 0.4rem;
+      padding: 0.4rem 0;
       border-bottom: 1px solid #f2f2f2;
       .name{
         .call{
@@ -44,9 +64,13 @@
       .definite{
         margin-top: 0.2rem;
         color: #999;
+        line-height: 0.3rem;
         .office{
           display: inline-block;
           width: 1.8rem;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
       }
     }
