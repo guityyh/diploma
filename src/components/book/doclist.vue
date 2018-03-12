@@ -1,37 +1,55 @@
 <template>
   <div class="docList">
-    <router-link tag="div" to="/docdetail" class="single" v-for="i in 10">
-      <div class="portrait"><img src="./../../assets/images/docportrait.png" alt=""></div>
+    <div tag="div" class="single" v-for="(item, index) in doclist" :key="index" @click="goDocDetails(item)">
+      <div class="portrait"><img :src="item.avatar"></div>
       <div class="title">
         <div class="call">
-          <div class="name">安德拉</div>
-          <div class="honor">一级专家</div>
+          <div class="name">{{item.name}}</div>
+          <div class="honor">{{item.title}}</div>
         </div>
         <div class="where">
-          <div class="office">儿科</div>
+          <div class="office">{{keshi}}</div>
           <!--<div class="float">二楼</div>-->
         </div>
-        <div class="skilled">擅长：小儿推拿、整脊、疝气小儿推拿</div>
+        <div class="skilled">擅长：{{item.text}}</div>
       </div>
       <div class="apply">
         <div class="judge">有号</div>
         <div class="button">预约</div>
       </div>
-    </router-link>
-
-
+    </div>
   </div>
 </template>
 
 <script>
   export default{
-    title: '医生列表'
+    title: '医生列表',
+    computed: {
+      doclist () {
+        return this.$store.state.doctorList.doctor
+      },
+      keshi () {
+        return this.$store.state.doctorList.department
+      }
+    },
+    created () {
+      console.log(this.doctorList)
+    },
+    methods: {
+      goDocDetails (item) {
+        let obj = Object.assign(item, {department: this.keshi, floor: this.$store.state.doctorList.floor})
+        console.log(obj)
+        this.$store.commit('setDoctorDetails', obj)
+        this.$router.push('/docdetail')
+      }
+    }
   }
 </script>
 
 <style lang="scss" scoped>
 .docList{
   padding-bottom: 1rem;
+  min-height: 100vh;
   .single{
     background-color: #fff;
     padding: 0.3rem 0.4rem;

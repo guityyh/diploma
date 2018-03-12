@@ -4,6 +4,7 @@ import Vue from 'vue'
 import FastClick from 'fastclick'
 import router from '@/router/index'
 import App from './App'
+import store from './store'
 
 import { ToastPlugin} from 'vux'
 Vue.use(ToastPlugin)
@@ -24,5 +25,6 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app-box')

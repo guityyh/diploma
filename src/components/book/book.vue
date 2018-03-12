@@ -11,16 +11,16 @@
     </div>
 
     <div class="department-content" ref="officeWrapper">
-      <router-link tag="div" to="/doclist" class="item" v-for="(item, index) in titleJson" :key="index">
+      <div class="item" v-for="(item, index) in titleJson" :key="index">
         <div class="item-title">{{titleJson[index]}}</div>
-        <div class="item-msg" v-for="(list, li) in dataJson[titleJson[index]]" :key="li">
+        <div class="item-msg" v-for="(list, li) in dataJson[titleJson[index]]" :key="li" @click="goDoclist(list)">
           <div class="msg">
             <span class="name">{{list.department}}</span>
             <span class="sep">|</span>
             <span class="add">{{list.floor}}</span>
           </div>
         </div>
-      </router-link>
+      </div>
     </div>
 
     <div class="fixed-nav">
@@ -109,6 +109,11 @@ import { setTimeout } from 'timers';
           }
         }
         this.currentIndex = 0
+      },
+      goDoclist (item) {
+        console.log(item)
+        this.$store.commit('setDoctorList', item)
+        this.$router.push('/doclist')
       }
     },
     mounted () {
