@@ -72,7 +72,6 @@
         const sex = this.$route.query.sex
         this.activePart = part
         this.diseasesList = sex === '1' ? boy[part] : girl[part]
-        console.log(boy[part])
       }
     }
   }

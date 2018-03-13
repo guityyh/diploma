@@ -2,20 +2,19 @@
 <div class="disease-details">
   <div class="top-bar">
     <div class="top-content">
-      <span class="title">你是否还伴随以下症状？</span>
-      <x-button mini type="primary">确定</x-button>
+      <span class="title">你是否还伴随以下症状？请点击查看</span>
     </div>
     <div class="float-wrap">
-      <div class="item">头痛</div>
-      <div class="item">昏睡</div>
-      <div class="item">头痛欲裂</div>
-      <div class="item">睡不着</div>
-      <div class="item">肚子疼</div>
+      <div class="item" :class="{'active': isClick.indexOf(1) > -1}" @click="addActive(1, 5)">恶心</div>
+      <div class="item" :class="{'active': isClick.indexOf(2) > -1}" @click="addActive(2, 20)">发热（体温升高）</div>
+      <div class="item" :class="{'active': isClick.indexOf(3) > -1}" @click="addActive(3, 10)">感觉房间在旋转</div>
+      <div class="item" :class="{'active': isClick.indexOf(4) > -1}" @click="addActive(4, 30)">头晕目眩</div>
+      <div class="item" :class="{'active': isClick.indexOf(5) > -1}" @click="addActive(5, 15)">头重脚轻感</div>
     </div>
   </div>
   <div class="progress-content">
     <div class="section-title">你可能的患病结果</div>
-    <div class="item" v-for="item in progressJson" :key='item.title'>
+    <div class="item" v-for="item in filterJson" :key='item.title'>
       <div class="title">{{item.title}}</div>
       <x-progress :percent="item.percent" :show-cancel="false"></x-progress>
     </div>
@@ -49,23 +48,58 @@ export default {
   data () {
     return {
       progressJson: [
-        {
-          title: '偏头痛',
-          percent: 20
-        },
-        {
-          title: '紧张性头痛',
-          percent: 80
-        },
-        {
-          title: '三叉神经痛',
-          percent: 90
-        },
-        {
-          title: '丛集性头疼',
-          percent: 100
-        }
-      ]
+        {"1":[{title: '偏头痛', percent: 40},
+        {title: '慢性鼻窦炎', percent: 30},
+        {title: '急性咽炎', percent: 30},
+        {title: '急性上呼吸道感染', percent: 15},
+        {title: '精神性疼痛', percent: 10}]},
+
+        {"1":[{title: '病毒性感染', percent: 50},
+        {title: '流感', percent: 35},
+        {title: '急性咽炎', percent: 25},
+        {title: '急性上呼吸道感染', percent: 10},
+        {title: '偏头痛', percent: 5}]},
+
+        {"1":[{title: '病毒性感染', percent: 40},
+          {title: '偏头痛', percent: 40},
+          {title: '脱水', percent: 15},
+          {title: '流感', percent: 10},
+          {title: '急性咽炎', percent: 5}]},
+
+        {"1":[{title: '偏头痛', percent: 65},
+          {title: '外周性眩晕（前庭性眩晕）', percent: 30},
+          {title: '头部外伤', percent: 15},
+          {title: '脑震荡', percent: 15},
+          {title: '精神性头痛', percent: 5}]}
+      ],
+      isClick: [],
+      score: 0
+    }
+  },
+  computed: {
+    filterJson () {
+      if (this.score >= 0 && this.score < 25) {
+        return this.progressJson[0]['1']
+      }else if (this.score >= 30 && this.score < 50) {
+        return this.progressJson[3]['1']
+      }else if (this.score >= 80) {
+        return this.progressJson[2]['1']
+      }else {
+        return this.progressJson[1]['1']
+      }
+    }
+  },
+  methods : {
+    addActive (item, score) {
+      const index = this.isClick.indexOf(item)
+      if (index > -1) {
+        this.isClick.splice(index, 1)
+        this.score -= score
+      } else {
+        this.isClick.push(item)
+        this.score += score
+      }
+      console.log(this.score)
     }
   }
 }
