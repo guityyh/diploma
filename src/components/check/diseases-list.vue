@@ -93,6 +93,9 @@
       text-align: center;
       padding: 0.5rem 0;
       border-bottom: 1px solid #e9e9e9;
+      &.active{
+        color: #2ac8f5;
+      }
       .iconfont{
         color: #222;
         font-size: 0.6rem;

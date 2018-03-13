@@ -1,42 +1,69 @@
 <template>
   <div class="article">
-    <div class="head-img"><img src="./../../assets/images/docportrait.png" alt=""></div>
-    <div class="title-header">
-      <div class="header-left">
-        <div class="title">我是标题我是标题</div>
-        <div class="else">
-          <div class="time">2018-1-28</div>
-          <div class="read"><i class="iconfont icon-yanjing"></i><span>123</span></div>
+    <div class="oneNews">
+      <div class="head-img"><img :src="'http://diploma.wbloc.com' + articleData.img" alt=""></div>
+      <div class="title-header">
+        <div class="header-left">
+          <div class="title">{{articleData.title}}</div>
+          <div class="else">
+            <div class="time">{{articleData.publish_time}}</div>
+            <div class="read"><i class="iconfont icon-yanjing"></i><span>{{articleData.reading}}</span></div>
+          </div>
         </div>
+        <a href="https://www.sobot.com/chat/h5/index.html?sysNum=d49779395d294b91b7e42c1776a10050" class="header-ask">咨询</a>
       </div>
-      <router-link tag="div" to="/article" class="header-ask">咨询</router-link>
+      <div class="main" v-html="articleData.content"></div>
     </div>
-    <div class="main">四年一届的世界杯又来了，对于全世界足球球迷而言，今年夏天注定意义非凡。
-      那么除了观看世界杯正赛以外，有没有其他的方式参与其中呢？
-      事实上，EASport “足球+电竞”的板块已开展多年，旗下 FIFAOline3 的顶级职业联赛 EACC 已举办了
-      3年。这款游戏及赛事由腾讯全权代理，作为 FIFAOL3 的独家代理，腾讯自然不会放过任何衍生赛事内容。
-      四年一届的世界杯又来了，对于全世界足球球迷而言，今年夏天注定意义非凡。
-      那么除了观看世界杯正赛以外，有没有其他的方式参与其中呢？
-      事实上，EASport “足球+电竞”的板块已开展多年，旗下 FIFAOline3 的顶级职业联赛 EACC 已举办了
-      3年。这款游戏及赛事由腾讯全权代理，作为 FIFAOL3 的独家代理，腾讯自然不会放过任何衍生赛事内容。
-    </div>
+
 
     <div class="read-more">
       <div class="guess">猜你还想读 >>></div>
-      <router-link tag="div" to="/article" class="article-item" v-for="i in 2">
+      <router-link tag="div" :to="{path: '/article', query: {id: item.id}}" class="article-item" v-for="(item,index) in articleMore">
         <div class="particulars">
-          <div class="title">给宝宝剃胎毛，以后头发就能变浓密？不存在的！</div>
+          <div class="title">{{item.title}}</div>
           <div class="else">
-            <div class="time">2018.1.23</div>
+            <div class="time">{{item.publish_time.split(' ')[0]}}</div>
           </div>
         </div>
-        <div class="article-img"><img src="./../../assets/images/article-1.jpeg" alt=""></div>
+        <div class="article-img"><img :src="'http://diploma.wbloc.com' + item.img" alt=""></div>
       </router-link>
     </div>
   </div>
 </template>
 
 <script>
+  import axios from '@/api'
+  export default {
+    data () {
+      return {
+        articleData: {},
+        articleMore: []
+      }
+    },
+     created () {
+      this.getArticleData()
+    },
+    watch: {
+      '$route': 'getArticleData'
+    },
+    methods: {
+      async getArticleData () {
+        const {data : {code, data}} = await axios.get('http://diploma.wbloc.com/api/article/info', {id: this.$route.query.id})
+        if (code === 200) {
+          this.articleData = data
+          this.newsCList()
+        }
+      },
+      async newsCList () {
+        let {data: {code,data}} = await axios.get('http://diploma.wbloc.com/api/article/lists/')
+        if (code === 200) {
+          const arr = data
+          let key = Math.floor(Math.random() * (arr.length - 2))
+          this.articleMore = arr.splice(key,2)
+        }
+      }
+    }
+  }
 
 </script>
 
@@ -119,7 +146,6 @@
           margin-right: 0.3rem;
           .title {
             font-size: 0.28rem;
-            font-weight: 700;
             line-height: 0.52rem;
             margin-top: -0.12rem;
             display: -webkit-box;

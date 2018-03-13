@@ -6,7 +6,9 @@ Vue.use(Vuex)
 const state = {
   doctorList: {},
   doctorDetails: {},
-  doctorAllList: []
+  doctorAllList: [],
+  initialDoctorList: [],
+  twoDoctorDetails: {}
 }
 
 const mutations = {
@@ -18,6 +20,12 @@ const mutations = {
   },
   setDoctorAllList (state, data) {
     state.doctorAllList = data
+  },
+  setInitialDoctorList (state, data) {
+    state.initialDoctorList = data
+  },
+  setTwoDoctorDetails (state, data) {
+    state.doctorDetails = data
   }
 }
 

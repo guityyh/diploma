@@ -111,7 +111,6 @@ import { setTimeout } from 'timers';
         this.currentIndex = 0
       },
       goDoclist (item) {
-        console.log(item)
         this.$store.commit('setDoctorList', item)
         this.$router.push('/doclist')
       }

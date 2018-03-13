@@ -11,23 +11,24 @@
     </div>
     <div class="navbar">
       <div class="nav-padding">
-        <div class="navbar-item" v-for="(item, index) in 10" @click="switchList(item, index)" :class="{active: activeIndex === index}">科普</div>
+        <div class="navbar-item" v-for="(item, index) in column" @click="switchList(item, index)" :class="{active: activeIndex === index}">{{item.name}}</div>
       </div>
-    </div>
-    <div class="headline">
-      <div class="headline-img"><img src="./../../assets/images/docportrait.png" alt=""></div>
-      <div class="headline-title"><p>我是标题，早上起来多喝水!</p></div>
     </div>
 
-    <router-link tag="div" to="/article" class="article-item" v-for="i in 10">
+    <router-link tag="div" :to="{path: '/article', query: {id: articleTop.id}}" class="headline">
+      <div class="headline-img"><img :src="'http://diploma.wbloc.com' + articleTop.img" alt=""></div>
+      <div class="headline-title"><p>{{articleTop.title}}</p></div>
+    </router-link>
+
+    <router-link tag="div" :to="{path: '/article', query: {id: item.id}}" class="article-item" v-for="(item, index) in articleList" :key="index">
       <div class="particulars">
-        <div class="title">肺癌为何偏爱中国人？五方式帮助预防！</div>
+        <div class="title">{{item.title}}</div>
         <div class="else">
-          <div class="time">2018.2.20</div>
-          <div class="read"><i class="iconfont icon-yanjing"></i><span>890</span></div>
+          <div class="time">{{item.publish_time.split(' ')[0]}}</div>
+          <div class="read"><i class="iconfont icon-yanjing"></i><span>{{item.reading}}</span></div>
         </div>
       </div>
-      <div class="article-img"><img src="./../../assets/images/article-2.jpeg" alt=""></div>
+      <div class="article-img"><img :src="'http://diploma.wbloc.com' + item.img" ></div>
     </router-link>
 
 
@@ -35,6 +36,7 @@
 </template>
 
 <script>
+  import axios from '@/api'
   import { Search, XButton } from 'vux'
 
   export default {
@@ -46,8 +48,16 @@
       return {
         results: [],
         value: '',
-        activeIndex: 0
+        activeIndex: 0,
+        column: [],
+        articleList: [],
+        articleTop: {}
       }
+    },
+    created () {
+       this.newsClassify()
+       this.newsCList()
+       this.newsTop()
     },
     methods: {
       onSubmit () {
@@ -60,6 +70,25 @@
       },
       switchList (item, index) {
         this.activeIndex = index
+      },
+      async newsClassify () {
+        let {data: {code,data}} = await axios.get('http://diploma.wbloc.com/api/category/lists')
+        if (code === 200) {
+          this.column = data
+        }
+      },
+      async newsCList () {
+        let {data: {code,data}} = await axios.get('http://diploma.wbloc.com/api/article/lists/')
+        if (code === 200) {
+        this.articleList = data
+        }
+      },
+      async newsTop () {
+        let {data: {code,data}} = await axios.get('http://diploma.wbloc.com/api/article/lists/', {is_top: 1})
+        if (code === 200) {
+          this.articleTop = data[0]
+          console.log(this.articleTop)
+        }
       }
     }
   }

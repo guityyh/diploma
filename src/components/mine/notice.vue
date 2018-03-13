@@ -41,7 +41,7 @@
       font-size: 0.28rem;
       color: #999;
       line-height: 0.52rem;
-      text-indent: 2em;
+      /*text-indent: 2em;*/
       word-break: break-all;
     }
   }

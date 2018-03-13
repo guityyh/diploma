@@ -189,6 +189,10 @@
           visit_phone: this.bookTel,
           visit_id_number: this.bookCard
         }
+        if (!this.patientName) {
+          this.toast('请完善信息后再提交预约')
+          return
+        }
         const {data: {code}} = await axios.post('http://diploma.wbloc.com/api/order/add', obj)
         if (code === 200) {
           setTimeout (() => {
@@ -196,7 +200,7 @@
           },500)
           this.toast('预约成功')
         }else {
-          this.toast('预约失败，请您重新预约')
+          this.toast('预约失败，请重新预约')
         }
 
       }

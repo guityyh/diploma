@@ -2,7 +2,7 @@
 <div class="disease-details">
   <div class="top-bar">
     <div class="top-content">
-      <span class="title">你是否还伴随以下症状？请点击查看</span>
+      <span class="title">你是否还伴随以下症状？</span>
     </div>
     <div class="float-wrap">
       <div class="item" :class="{'active': isClick.indexOf(1) > -1}" @click="addActive(1, 5)">恶心</div>
@@ -22,17 +22,17 @@
 
   <div class="recommend">
     <div class="recommend-title"><i class="iconfont icon-14"></i>专家推荐</div>
-    <div class="single" v-for="i in 2">
-      <div class="portrait"><img src="./../../assets/images/docportrait.png" alt=""></div>
+    <div class="single" v-for="(item, index) in doctorJson" :key="index" @click="goDocDetail(item)">
+      <div class="portrait"><img :src="item.avatar" alt=""></div>
       <div class="title">
         <div class="call">
-          <div class="name">安德拉</div>
-          <div class="honor">一级专家</div>
+          <div class="name">{{item.name}}</div>
+          <div class="honor">{{item.title}}</div>
         </div>
-        <div class="skilled">擅长：小儿推拿、整脊、疝气</div>
+        <div class="skilled">擅长：{{item.text}}</div>
       </div>
 
-      <router-link tag="div" to="/docdetail" class="button">预约</router-link>
+      <div class="button">预约</div>
     </div>
   </div>
 </div>
@@ -73,7 +73,8 @@ export default {
           {title: '精神性头痛', percent: 5}]}
       ],
       isClick: [],
-      score: 0
+      score: 0,
+      doctorJson: {}
     }
   },
   computed: {
@@ -89,6 +90,11 @@ export default {
       }
     }
   },
+  created () {
+    let arr = this.$store.state.initialDoctorList
+    let key = Math.floor(Math.random() * (arr.length - 2))
+    this.doctorJson = arr.splice(key, 2)
+  },
   methods : {
     addActive (item, score) {
       const index = this.isClick.indexOf(item)
@@ -100,6 +106,10 @@ export default {
         this.score += score
       }
       console.log(this.score)
+    },
+    goDocDetail (item) {
+      this.$store.commit('setTwoDoctorDetails', item)
+      this.$router.push('/docdetail')
     }
   }
 }
@@ -204,6 +214,7 @@ export default {
       .title{
         margin-left: 0.5rem;
         flex: 1;
+        overflow: hidden;
         .call {
           .name {
             font-size: 0.32rem;
@@ -217,7 +228,10 @@ export default {
           }
         }
         .skilled{
-          margin-top: 0.1rem;
+          margin-top: 0.2rem;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
       }
       .button{

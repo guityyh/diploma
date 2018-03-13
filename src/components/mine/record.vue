@@ -1,7 +1,7 @@
 <template>
   <div class="record">
     <div class="record-single" v-for="(item, index) in bookList" :key="item.id" v-if="bookList.length > 0" >
-      <router-link tag="div" :to="{path: 'bookdetails', query: {id: item.id}}" class="border" @click="goBookDetail">
+      <router-link tag="div" :to="{path: 'bookdetails', query: {id: item.id}}" class="border" >
         <div class="single-content">
           <div class="name"><span class="call">{{item.doctor}}</span></div>
           <div class="definite"><span class="office">{{item.department}}</span><span class="time">{{item.create_time}}</span></div>
@@ -31,9 +31,7 @@
       }
     },
     methods: {
-      goBookDetail () {
 
-      }
     }
   }
 </script>

@@ -13,9 +13,14 @@
 
     </div>
 
-    <div class="definite">
-      <div class="broadcast"> <i class="iconfont icon-broadcast"></i>公告：XX三级甲等医院咨询热线000-0123456</div>
+    <div class="definite de-broadcast">
+      <swiper auto loop height="28px" direction="vertical" :interval=2000 :show-dots="false">
+        <swiper-item><p class="broadcast"> <i class="iconfont icon-broadcast"></i>公告：XX三级甲等医院咨询热线000-0123456</p></swiper-item>
+        <swiper-item><p class="broadcast"> <i class="iconfont icon-broadcast"></i>公告：本周XX医生将来咱们医院行医</p></swiper-item>
+        <swiper-item><p class="broadcast"> <i class="iconfont icon-broadcast"></i>永拒红包回扣，确保病员满意</p></swiper-item>
+      </swiper>
     </div>
+
     <div class="skip">
       <router-link tag="div" to="/notice" class="skip-item"><div class="icon first"><img src="./../assets/images/notice.png" alt=""></div>预约须知</router-link>
       <router-link tag="div" to="/managelist" class="skip-item"><div class="icon second"><img src="./../assets/images/record.png" alt=""></div>档案管理</router-link>
@@ -57,7 +62,7 @@
             <div class="title">医保按病种付费推荐目录发布：明确130种疾病该花多少钱</div>
             <div class="else">
               <div class="time">2018.3.1</div>
-              <div class="read"><i class="iconfont icon-yanjing"></i><span>1k</span></div>
+              <div class="read"><i class="iconfont icon-yanjing"></i><span>1568</span></div>
             </div>
           </div>
           <div class="article-img"><img src="./../assets/images/article-3.jpg" alt=""></div>
@@ -73,10 +78,11 @@
 </template>
 
 <script>
-import { Swiper } from 'vux'
+import { Swiper, SwiperItem } from 'vux'
 export default {
   components: {
-    Swiper
+    Swiper,
+    SwiperItem
   },
   data () {
     return {
@@ -146,11 +152,13 @@ export default {
   .definite{
     padding: 0 0.4rem;
   }
+  .de-broadcast{
+    margin-top: 1.4rem;
+  }
   .broadcast{
-    margin-top: 1.3rem;
-    padding: 0.15rem 0;
-    border-radius: 0.1rem;
+    line-height: 28px;
     background-color: #d4f4fd;
+    border-radius: 0.1rem;
     .icon-broadcast{
       margin: 0 0.2rem;
     }

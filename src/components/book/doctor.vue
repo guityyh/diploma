@@ -21,7 +21,7 @@
           <!--</div>-->
         <!--</div>-->
 
-        <div tag="div" class="single" v-for="(item, li) in dataJson[titleJson[index]]" :key="li" @click="goDoclist(item)">
+        <div class="single" v-for="(item, li) in dataJson[titleJson[index]]" :key="li" @click="goDoclist(item)">
           <div class="portrait"><img :src="item.avatar"></div>
           <div class="title">
             <div class="call">
@@ -130,7 +130,6 @@
         this.currentIndex = 0
       },
       goDoclist (item) {
-        console.log(item)
         this.$store.commit('setDoctorDetails', item)
         this.$router.push('/docdetail')
       }

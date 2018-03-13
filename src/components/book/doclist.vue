@@ -1,6 +1,11 @@
 <template>
   <div class="docList">
-    <div tag="div" class="single" v-for="(item, index) in doclist" :key="index" @click="goDocDetails(item)">
+    <div v-if="!doclist" class="nodoctor">
+      <i class="iconfont icon-shangxin"></i>
+      <p>不好意思，该科室还没有医生哦</p>
+    </div>
+
+    <div class="single" v-for="(item, index) in doclist" :key="index" @click="goDocDetails(item)" v-else>
       <div class="portrait"><img :src="item.avatar"></div>
       <div class="title">
         <div class="call">
@@ -18,6 +23,7 @@
         <div class="button">预约</div>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -33,7 +39,6 @@
       }
     },
     created () {
-      console.log(this.doctorList)
     },
     methods: {
       goDocDetails (item) {
@@ -127,6 +132,19 @@
         border-radius: 0.1rem;
         background-color: #2ac8f5;
       }
+    }
+  }
+  .nodoctor{
+    font-size: 0.28rem;
+    color: #777;
+    text-align: center;
+    padding-top: 30vh;
+    .icon-shangxin{
+      font-size: 1.6rem;
+      display: block;
+    }
+    p{
+      margin-top: 0.4rem;
     }
   }
 }

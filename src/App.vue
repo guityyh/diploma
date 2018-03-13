@@ -29,6 +29,7 @@ export default {
         }
       }
     }
+    this.$store.commit('setInitialDoctorList', doctorList)
     for (let i = 0; i < doctorList.length; i++) {
       var arr = []
       if (!docObj[doctorList[i].firstletter]) {
