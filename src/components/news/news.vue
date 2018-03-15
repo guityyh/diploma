@@ -2,7 +2,6 @@
   <div class="news">
     <div class="header">
       <search
-        :results="results"
         v-model="value"
         position="fixed"
         @on-submit="onSubmit"
@@ -11,7 +10,7 @@
     </div>
     <div class="navbar">
       <div class="nav-padding">
-        <div class="navbar-item" v-for="(item, index) in column" @click="switchList(item, index)" :class="{active: activeIndex === index}">{{item.name}}</div>
+        <div class="navbar-item" v-for="(item, index) in column" :key="item.id" @click="switchList(item.id, index)" :class="{active: activeIndex === index}">{{item.name}}</div>
       </div>
     </div>
 
@@ -56,38 +55,42 @@
     },
     created () {
        this.newsClassify()
-       this.newsCList()
        this.newsTop()
     },
     methods: {
       onSubmit () {
         this.$refs.search.setBlur()
-        this.$vux.toast.show({
-          type: 'text',
-          position: 'top',
-          text: 'on submit'
-        })
+        this.newsCList(null, this.value)
       },
-      switchList (item, index) {
+      switchList (id, index) {
         this.activeIndex = index
+        this.newsCList(id)
       },
       async newsClassify () {
         let {data: {code,data}} = await axios.get('http://diploma.wbloc.com/api/category/lists')
         if (code === 200) {
           this.column = data
+          this.newsCList(data[0].id)
         }
       },
-      async newsCList () {
-        let {data: {code,data}} = await axios.get('http://diploma.wbloc.com/api/article/lists/')
+      async newsCList (id, keyword) {
+        let obj = {
+          cid: id
+        }
+        if (keyword) {
+          obj = {
+            keyword: keyword
+          }
+        }
+        let {data: {code,data}} = await axios.get('http://diploma.wbloc.com/api/article/lists/', obj)
         if (code === 200) {
-        this.articleList = data
+          this.articleList = data
         }
       },
-      async newsTop () {
+      async newsTop (id) {
         let {data: {code,data}} = await axios.get('http://diploma.wbloc.com/api/article/lists/', {is_top: 1})
         if (code === 200) {
           this.articleTop = data[0]
-          console.log(this.articleTop)
         }
       }
     }

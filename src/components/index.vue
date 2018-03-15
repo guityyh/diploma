@@ -37,36 +37,17 @@
 
       <div class="info">
         <div class="headline">健康资讯</div>
-        <router-link tag="div" to="/article" class="article-item">
+        <router-link tag="div" :to="{path: '/article', query: {id: item.id}}" class="article-item" v-for="item in articleList" :key="item.id">
           <div class="particulars">
-            <div class="title">给宝宝剃胎毛，以后头发就能变浓密？不存在的！</div>
+            <div class="title">{{item.title}}</div>
             <div class="else">
-              <div class="time">2018.1.23</div>
-              <div class="read"><i class="iconfont icon-yanjing"></i><span>378</span></div>
+              <div class="time">{{item.publish_time.split(' ')[0]}}</div>
+              <div class="read"><i class="iconfont icon-yanjing"></i><span>{{item.reading}}</span></div>
             </div>
           </div>
-          <div class="article-img"><img src="./../assets/images/article-1.jpeg" alt=""></div>
+          <div class="article-img"><img :src="'http://diploma.wbloc.com' + item.img"></div>
         </router-link>
-        <router-link tag="div" to="/article" class="article-item">
-          <div class="particulars">
-            <div class="title">肺癌为何偏爱中国人？五方式帮助预防！</div>
-            <div class="else">
-              <div class="time">2018.2.20</div>
-              <div class="read"><i class="iconfont icon-yanjing"></i><span>890</span></div>
-            </div>
-          </div>
-          <div class="article-img"><img src="./../assets/images/article-2.jpeg" alt=""></div>
-        </router-link>
-        <router-link tag="div" to="/article" class="article-item">
-          <div class="particulars">
-            <div class="title">医保按病种付费推荐目录发布：明确130种疾病该花多少钱</div>
-            <div class="else">
-              <div class="time">2018.3.1</div>
-              <div class="read"><i class="iconfont icon-yanjing"></i><span>1568</span></div>
-            </div>
-          </div>
-          <div class="article-img"><img src="./../assets/images/article-3.jpg" alt=""></div>
-        </router-link>
+        
         <router-link tag="div" to="/news" class="article-more">查看更多健康资讯</router-link>
       </div>
 
@@ -79,6 +60,7 @@
 
 <script>
 import { Swiper, SwiperItem } from 'vux'
+import api from '@/api'
 export default {
   components: {
     Swiper,
@@ -90,7 +72,19 @@ export default {
         {img: require('./../assets/images/hospital-1.jpg')},
         {img: require('./../assets/images/hospital-2.jpg')},
         {img: require('./../assets/images/hospital-3.jpg')}
-      ]
+      ],
+      articleList: []
+    }
+  },
+  created () {
+    this.getList()
+  },
+  methods: {
+    async getList () {
+      const {data: {code, data}} = await api.get('http://diploma.wbloc.com/api/article/lists/')
+      if (code === 200) {
+        this.articleList = data.splice(0, 3)
+      }
     }
   }
 }
