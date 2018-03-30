@@ -3,8 +3,8 @@
     <div class="record-single" v-for="(item, index) in bookList" :key="item.id" v-if="bookList.length > 0" >
       <router-link tag="div" :to="{path: 'bookdetails', query: {id: item.id}}" class="border" >
         <div class="single-content">
-          <div class="name"><span class="call">{{item.doctor}}</span></div>
-          <div class="definite"><span class="office">{{item.department}}</span><span class="time">{{item.create_time}}</span></div>
+          <div class="name"><span class="call">{{item.doctor}} 医生</span></div>
+          <div class="definite"><span class="office">{{item.department}}</span><span class="time">{{item.create_time.split(' ')[0]}}</span></div>
         </div>
         <div class="single-arrow">
           <div class="state">{{item.status_text}}</div>

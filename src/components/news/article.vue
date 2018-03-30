@@ -1,7 +1,7 @@
 <template>
   <div class="article">
     <div class="oneNews">
-      <div class="head-img"><img :src="'http://diploma.wbloc.com' + articleData.img" alt=""></div>
+      <div class="head-img"><img :src="articleData.img" alt=""></div>
       <div class="title-header">
         <div class="header-left">
           <div class="title">{{articleData.title}}</div>
@@ -25,7 +25,7 @@
             <div class="time">{{item.publish_time.split(' ')[0]}}</div>
           </div>
         </div>
-        <div class="article-img"><img :src="'http://diploma.wbloc.com' + item.img" alt=""></div>
+        <div class="article-img"><img :src="item.img" alt=""></div>
       </router-link>
     </div>
   </div>
@@ -67,7 +67,7 @@
 
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .article{
     font-size: 0.28rem;
     padding-bottom: 1rem;
@@ -87,6 +87,9 @@
       padding: 0.2rem 0.4rem 0;
       background-color: #fff;
       line-height: 0.52rem;
+      .header-left{
+        max-width: 85%;
+      }
       .title{
         font-size: 0.32rem;
         font-weight: 700;
@@ -109,6 +112,9 @@
       padding: 0.4rem;
       line-height: 0.52rem;
       background-color: #fff;
+      img{
+        max-width: 100%;
+      }
     }
 
     .read-more{

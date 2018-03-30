@@ -82,19 +82,23 @@
   display: flex;
   align-items: flex-start;
   background-color: #fff;
-  padding-bottom: 1rem;
+  padding-bottom: 0.8rem;
   .left-list{
     width: 30%;
     height: 100vh;
     overflow: auto;
     font-size: 0;
     border-right: 1px solid #e9e9e9;
+    background-color: #f2f2f2;
     .item{
       text-align: center;
       padding: 0.5rem 0;
       border-bottom: 1px solid #e9e9e9;
       &.active{
-        color: #2ac8f5;
+        .icon-toutong, .text{
+          color: #2ac8f5 !important;
+        }
+
       }
       .iconfont{
         color: #222;

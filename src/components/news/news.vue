@@ -15,7 +15,7 @@
     </div>
 
     <router-link tag="div" :to="{path: '/article', query: {id: articleTop.id}}" class="headline">
-      <div class="headline-img"><img :src="'http://diploma.wbloc.com' + articleTop.img" alt=""></div>
+      <div class="headline-img"><img :src="articleTop.img" alt=""></div>
       <div class="headline-title"><p>{{articleTop.title}}</p></div>
     </router-link>
 
@@ -27,7 +27,7 @@
           <div class="read"><i class="iconfont icon-yanjing"></i><span>{{item.reading}}</span></div>
         </div>
       </div>
-      <div class="article-img"><img :src="'http://diploma.wbloc.com' + item.img" ></div>
+      <div class="article-img"><img :src="item.img" ></div>
     </router-link>
 
 

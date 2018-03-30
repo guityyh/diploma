@@ -21,7 +21,7 @@
         :close-on-confirm="false"
         title="操作提示"
         @on-confirm="onConfirm4">
-        <p style="text-align:center;">确认取消本次预约吗？</p>
+        <p style="text-align:center;">确认取消本次预约吗？已支付预约金将不再返还，请谨慎操作</p>
       </confirm>
     </div>
   </div>
@@ -61,15 +61,18 @@
     },
     methods: {
       async onConfirm4 () {
-        const {data: {code}} = await axios.post('http://diploma.wbloc.com/api/order/setStauts', {id: this.$route.query.id})
+        const {data: {code, data}} = await axios.post('http://diploma.wbloc.com/api/order/setStauts', {id: this.$route.query.id})
         if ( code === 200 ) {
           this.bookState = '已取消'
+          this.definiteInfo.status = -1
           this.showConfirm = false
         }
       },
       alertConfirm () {
         if (this.definiteInfo.status === 0) {
           this.showConfirm = true
+        } else {
+          this.showConfirm = false
         }
       }
     }

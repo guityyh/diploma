@@ -7,7 +7,7 @@
         <div class="border">
           <router-link tag="div" to="/book" class="classify"><div class="classify-icon-1"><img src="./../assets/images/office.png" alt=""></div>按科室挂号</router-link>
           <router-link tag="div" to="/doctor" class="classify"><div class="classify-icon-2"><img src="./../assets/images/doc.png" alt=""></div>按医生挂号</router-link>
-          <router-link tag="div" to="/check" class="classify"><div class="classify-icon-3"><img src="./../assets/images/diseaseslect.png" alt=""></div>按疾病挂号</router-link>
+          <router-link tag="div" to="/check" class="classify"><div class="classify-icon-3"><img src="./../assets/images/diseaseslect.png" alt=""></div>按症状挂号</router-link>
         </div>
       </div>
 
@@ -16,7 +16,7 @@
     <div class="definite de-broadcast">
       <swiper auto loop height="28px" direction="vertical" :interval=2000 :show-dots="false">
         <swiper-item><p class="broadcast"> <i class="iconfont icon-broadcast"></i>公告：XX三级甲等医院咨询热线000-0123456</p></swiper-item>
-        <swiper-item><p class="broadcast"> <i class="iconfont icon-broadcast"></i>公告：本周XX医生将来咱们医院行医</p></swiper-item>
+        <swiper-item><p class="broadcast"> <i class="iconfont icon-broadcast"></i>公告：本周张强医生将来咱们医院行医</p></swiper-item>
         <swiper-item><p class="broadcast"> <i class="iconfont icon-broadcast"></i>永拒红包回扣，确保病员满意</p></swiper-item>
       </swiper>
     </div>
@@ -45,9 +45,9 @@
               <div class="read"><i class="iconfont icon-yanjing"></i><span>{{item.reading}}</span></div>
             </div>
           </div>
-          <div class="article-img"><img :src="'http://diploma.wbloc.com' + item.img"></div>
+          <div class="article-img"><img :src="item.img"></div>
         </router-link>
-        
+
         <router-link tag="div" to="/news" class="article-more">查看更多健康资讯</router-link>
       </div>
 
@@ -81,7 +81,7 @@ export default {
   },
   methods: {
     async getList () {
-      const {data: {code, data}} = await api.get('http://diploma.wbloc.com/api/article/lists/')
+      const {data: {code, data}} = await api.get('http://diploma.wbloc.com/api/article/lists/', {is_top: 1})
       if (code === 200) {
         this.articleList = data.splice(0, 3)
       }

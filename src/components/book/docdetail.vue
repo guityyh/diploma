@@ -134,7 +134,7 @@
         this.firstClick = false;
         for (let i = 0;i < localData.length; i++) {
           var obj = {
-            key: localData[i].tel,
+            key: localData[i].name,
             value: localData[i].name
           }
           obj = Object.assign(obj, localData[i])
@@ -166,9 +166,6 @@
           this.bookCard = temp[0].card
         }, 0)
       },
-      onBlur (val) {
-        console.log('on blur', val)
-      },
       onChange () {
         this.show2 = true
         this.$nextTick(() => {
@@ -193,12 +190,17 @@
           this.toast('请完善信息后再提交预约')
           return
         }
-        const {data: {code}} = await axios.post('http://diploma.wbloc.com/api/order/add', obj)
+        const {data: {code, data}} = await axios.post('http://diploma.wbloc.com/api/order/add', obj)
         if (code === 200) {
           setTimeout (() => {
             this.$router.push('/record')
           },500)
           this.toast('预约成功')
+        }else if (code === 0) {
+          setTimeout (() => {
+            this.show2 = false
+          },1000)
+          this.toast('您已经有挂号，请不要重复挂号！')
         }else {
           this.toast('预约失败，请重新预约')
         }
